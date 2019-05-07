@@ -1,7 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # api key
-/Users/raechelodom/Desktop/turing/mod3/movie-tracker/movie-mania/src/apikey.js
+/apikey.js
 
 # dependencies
 /node_modules
