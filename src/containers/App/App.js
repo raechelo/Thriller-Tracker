@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fetchData } from '../../utils/fetchData';
+import { fetchData } from '../../api/fetchData';
 import { key } from '../../utils/apikey';
 // import PropTypes from 'prop-types';
 
