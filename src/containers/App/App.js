@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import fetchMovies from '../../api/fetchMovies';
+import Nav from '../../components/Nav/Nav';
+import ContentContainer from '../../components/ContentContainer/ContentContainer';
 // import PropTypes from 'prop-types';
 
 class App extends Component {
@@ -21,8 +23,8 @@ class App extends Component {
     }) 
     return (
       <div className="App">
-        <h1>MOVIE MANIA</h1>
-        {displayMovies}
+        <Nav />
+        <ContentContainer />
       </div>
     );
   }
