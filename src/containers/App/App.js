@@ -17,7 +17,7 @@ class App extends Component {
   render() {
     const { movies } = this.state;
     const displayMovies = movies.length && movies.map(movie => {
-      return <img src={"https://image.tmdb.org/t/p/w185_and_h278_bestv2/" + movie.posterImage} />
+      return <img src={movie.posterImage} />
     }) 
     return (
       <div className="App">
