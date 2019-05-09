@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 
 class SignUp extends Component {
   constructor() {
@@ -19,11 +20,11 @@ class SignUp extends Component {
     return (
       <form>
         <h2>Create Account</h2>
-        <label for="name">Name</label>
+        <label htmlFor="name">Name</label>
         <input onChange={ this.handleChange } name='name' type='text' id="name" />
-        <label for="email">Email</label>
+        <label htmlFor="email">Email</label>
         <input onChange={ this.handleChange } name='email' type='email' id="email" />
-        <label for="password">Password</label>
+        <label htmlFor="password">Password</label>
         <input onChange={ this.handleChange } name='password' type='password' id="password" />
         <button>Create</button>
       </form>
@@ -31,4 +32,8 @@ class SignUp extends Component {
   }
 }
 
-export default SignUp;
+const mapDispatchToProps = (dispatch) => ({
+  handleSubmit: (name, email, password) => dispatch(createUser(name, email, password))
+})
+
+export default connect(null, mapDispatchToProps)(SignUp);
