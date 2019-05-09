@@ -1,13 +1,12 @@
 import React from 'react';
-import lamp from '../../assets/Pixar-Lamp.svg';
 import { NavLink } from 'react-router-dom';
 
 const Nav = () => {
   return (
     <header className="Header">
       <div>
-        <img src={lamp} alt="lamp" />
-        <h1>Movie Mania</h1>
+        <h1>fantastic movies</h1>
+        <h2>and how to watch them</h2>
       </div>
       <nav>
         <NavLink to='/' className='nav'>Home</NavLink>

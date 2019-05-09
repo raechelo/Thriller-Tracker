@@ -1,1 +1,31 @@
-form {color: white;}
+form {
+  background-color: rgba(161, 161, 161, 0.8);
+  font-family: $bodyfont;
+  font-size: 1.3rem;
+  margin: auto auto;
+  padding: 1rem 3rem;
+  text-align: center;
+
+  input {
+    display: block;
+    font-family: $bodyfont;
+    font-size: 1rem;
+    padding: 2px 5px;
+    margin: auto;
+  }
+
+  label {
+    font-size: 1.2rem;
+  }
+
+  button {
+    border: 2px solid $accent;
+    margin: 1rem;
+    font-size: 1rem;
+    width: 60%;
+    &:hover {
+      background-color: $accent;
+      color: white;
+    }
+  }
+}
