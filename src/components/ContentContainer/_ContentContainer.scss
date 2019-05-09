@@ -1,0 +1,11 @@
+.Content-Container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 10px;
+  background-color: magenta;
+  
+  img {
+    margin: .5rem;
+  }
+}
