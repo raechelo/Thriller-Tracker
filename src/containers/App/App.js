@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import fetchMovies from '../../api/fetchMovies';
 import Nav from '../../components/Nav/Nav';
 import ContentContainer from '../../components/ContentContainer/ContentContainer';
+import { connect } from 'react-redux';
+import { setMovies } from '../../actions';
 // import PropTypes from 'prop-types';
 
 class App extends Component {
@@ -11,16 +13,17 @@ class App extends Component {
       movies: []
     }
   }
+  
   componentDidMount = async () => {
     const movies = await fetchMovies()
-    this.setState({ movies });
+    this.props.setMovies(movies);
   }
 
   render() {
-    const { movies } = this.state;
-    const displayMovies = movies.length && movies.map(movie => {
-      return <img src={movie.posterImage} />
-    }) 
+    // const { movies } = this.state;
+    // const displayMovies = movies.length && movies.map(movie => {
+    //   return <img src={movie.posterImage} />
+    // }) 
     return (
       <div className="App">
         <Nav />
@@ -30,7 +33,9 @@ class App extends Component {
   }
 }
 
-// export const mapDispatchToProps = (dispatch) => ({})
-// export const mapStateToProps = (state) => ({})
 
-export default App;
+export const mapDispatchToProps = (dispatch) => ({
+  setMovies: (movies) => dispatch(setMovies(movies))
+});
+
+export default connect(null, mapDispatchToProps)(App);

@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 const Home = () => {
   return (
@@ -6,4 +7,8 @@ const Home = () => {
   )
 }
 
-export default Home;
+export const mapStateToProps = (state) => ({
+  movies: state.movies
+})
+
+export default connect(mapStateToProps)(Home);
