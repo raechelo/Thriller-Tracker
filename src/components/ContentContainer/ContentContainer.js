@@ -5,10 +5,8 @@ import Favorites from '../Favorites/Favorites';
 import Login from '../Login/Login';
 import SignUp from '../SignUp/SignUp';
 import { connect } from 'react-redux';
-import Card from '../../containers/Card/Card'
 
 const ContentContainer = (props) => {
-  console.log(props)
   return (
     <section className='Content-Container'>
       <Route exact path='/' component={Home} />

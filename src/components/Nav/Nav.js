@@ -6,7 +6,7 @@ const Nav = () => {
   return (
     <header className="Header">
       <div>
-        <img src={lamp} />
+        <img src={lamp} alt="lamp" />
         <h1>Movie Mania</h1>
       </div>
       <nav>
