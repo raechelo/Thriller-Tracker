@@ -1,7 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-const Nav = () => {
+const Nav = (props) => {
   return (
     <header className="Header">
       <div>
@@ -10,12 +11,24 @@ const Nav = () => {
       </div>
       <nav>
         <NavLink exact to='/' className='nav'>Home</NavLink>
-        <NavLink exact to='/favorites' className='nav'>Favorites</NavLink>
-        <NavLink exact to='/login' className='nav'>Login</NavLink>
-        <NavLink exact to='/sign-up' className='nav'>Sign Up</NavLink>
+        {
+          props.user.name && 
+          <NavLink exact to='/favorites' className='nav'>Favorites</NavLink>
+        }
+        {
+          !props.user.name &&
+          <div>
+            <NavLink exact to='/login' className='nav'>Login</NavLink>
+            <NavLink exact to='/sign-up' className='nav'>Sign Up</NavLink>
+          </div>
+        }
       </nav>
     </header>
   )
 }
 
-export default Nav;
+export const mapStateToProps = (state) => ({
+  user: state.user
+})
+
+export default connect(mapStateToProps)(Nav);
