@@ -5,17 +5,16 @@ import Favorites from '../Favorites/Favorites';
 import Login from '../Login/Login';
 import SignUp from '../SignUp/SignUp';
 import { connect } from 'react-redux';
+import Card from '../../containers/Card/Card'
 
 const ContentContainer = (props) => {
   console.log(props)
-  const movieImage = props.movies.length && <img src={props.movies[0].posterImage} />;
   return (
-    <section>
+    <section className='Content-Container'>
       <Route exact path='/' component={Home} />
       <Route exact path='/favorites' component={Favorites} />
       <Route exact path='/login' component={Login} />
       <Route exact path='/sign-up' component={SignUp} />
-      {movieImage}
     </section>
   )
 }

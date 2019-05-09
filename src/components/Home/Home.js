@@ -1,9 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const Home = () => {
+const Home = (props) => {
+const movieImage = props.movies.length && props.movies.map(m => (m.title && <img src={m.posterImage} />))
+
   return (
-    <h2>Home</h2>
+    <section className='Home'>{movieImage}</section>
   )
 }
 

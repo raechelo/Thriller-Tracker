@@ -1,0 +1,42 @@
+.Header {
+  background-color: $pixarBlue;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: -20px; 
+  border-bottom: 4px solid darken($pixarBlue, 30%);
+  
+  h1 {
+    display: inline;
+    font-family: $fancyfont;
+    font-size: 4rem;
+  }
+
+  nav {
+    color: darken($pixarBlue, 30%);
+    font-family: $fancyfont;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+
+    a {
+      padding: 10px;
+      &:hover {
+        background-color: darken($pixarBlue, 30%);
+        color: white;
+      }
+    }
+
+    .active {
+      background-color: darken($pixarBlue, 30%);
+      color: white;
+    }
+  }
+
+  img {
+    width: 5.5rem;
+  }
+  
+  div {
+    text-align: center;
+  }
+}
