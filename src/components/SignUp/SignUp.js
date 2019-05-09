@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
 
 class SignUp extends Component {
   constructor() {
@@ -11,29 +10,47 @@ class SignUp extends Component {
     }
   }
 
+  handleSubmit = (e) => {
+    e.preventDefault()
+    this.createUser(this.state);
+  }
+
+  createUser = (state) => {
+    const {name, email, password} = state
+    const url = 'http://localhost:3000/api/users/new'
+    const options = {
+      method: 'POST',
+      body: JSON.stringify({
+        name,
+        email,
+        password
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    fetch(url, options)
+    .catch(error => console.log(error));
+  }
+
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   }
 
-  // onSubmit={ () => handleSubmit() }
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <h2>Create Account</h2>
         <label htmlFor="name">Name</label>
-        <input onChange={ this.handleChange } name='name' type='text' id="name" />
+        <input onChange={ this.handleChange } name='name' type='text' id="name" className='userProp' />
         <label htmlFor="email">Email</label>
-        <input onChange={ this.handleChange } name='email' type='email' id="email" />
+        <input onChange={ this.handleChange } name='email' type='email' id="email" className='userProp' />
         <label htmlFor="password">Password</label>
-        <input onChange={ this.handleChange } name='password' type='password' id="password" />
+        <input onChange={ this.handleChange } name='password' type='password' id="password" className='userProp' />
         <button>Create</button>
       </form>
     ) 
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  handleSubmit: (name, email, password) => dispatch(createUser(name, email, password))
-})
-
-export default connect(null, mapDispatchToProps)(SignUp);
+export default SignUp;
