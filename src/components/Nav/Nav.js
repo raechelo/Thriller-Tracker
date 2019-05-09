@@ -1,10 +1,14 @@
 import React from 'react';
+import lamp from '../../assets/Pixar-Lamp.svg';
 import { NavLink } from 'react-router-dom';
 
 const Nav = () => {
   return (
-    <header className="header">
-      <h1>Movie Mania</h1>
+    <header className="Header">
+      <div>
+        <img src={lamp} />
+        <h1>Movie Mania</h1>
+      </div>
       <nav>
         <NavLink to='/' className='nav'>Home</NavLink>
         <NavLink to='/favorites' className='nav'>Favorites</NavLink>

@@ -5,7 +5,7 @@ const Home = (props) => {
 const movieImage = props.movies.length && props.movies.map(m => (m.title && <img src={m.posterImage} />))
 
   return (
-    <h2>{movieImage}</h2>
+    <section className='Home'>{movieImage}</section>
   )
 }
 

@@ -1,5 +1,10 @@
-h2 {
-  display: block;
-  margin: auto;
-  font-family: $fancyfont;
+.Content-Container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 10px;
+  
+  img {
+    margin: .5rem;
+  }
 }
