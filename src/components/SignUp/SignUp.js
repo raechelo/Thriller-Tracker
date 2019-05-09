@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 
 class SignUp extends Component {
   constructor() {
@@ -6,7 +7,8 @@ class SignUp extends Component {
     this.state = {
       name: '',
       email: '',
-      password: ''
+      password: '',
+      status: ''
     }
   }
 
@@ -20,17 +22,18 @@ class SignUp extends Component {
     const url = 'http://localhost:3000/api/users/new'
     const options = {
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify({
         name,
         email,
         password
-      }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
+      })
     }
     fetch(url, options)
-    .catch(error => console.log(error));
+    .then(response => this.setState({status: response.status}))
+    .catch(error => console.log('error', error));
   }
 
   handleChange = (e) => {
@@ -48,6 +51,7 @@ class SignUp extends Component {
         <label htmlFor="password">Password</label>
         <input onChange={ this.handleChange } name='password' type='password' id="password" className='userProp' />
         <button>Create</button>
+        {this.state.status === 200 && <Redirect to='/' />}
       </form>
     ) 
   }
