@@ -5,16 +5,18 @@ import { connect } from 'react-redux';
 const Nav = (props) => {
   return (
     <header className="Header">
-      <div>
-        <h1>fantastic movies</h1>
-        <h2>and how to watch them</h2>
-      </div>
+      {/* <div>
+        <h1>movie mania</h1>
+      </div> */}
       <nav>
-        <NavLink exact to='/' className='nav'>Home</NavLink>
         {
           props.user.name && 
-          <NavLink exact to='/favorites' className='nav'>Favorites</NavLink>
+          <div>
+            <NavLink exact to='/favorites' className='nav fave'>Favorites</NavLink>
+            <NavLink exact to='/' className='nav'>Sign Out</NavLink>
+          </div>
         }
+        <NavLink exact to='/' className='nav title'><h1>movie mania</h1></NavLink>
         {
           !props.user.name &&
           <div>
@@ -22,6 +24,10 @@ const Nav = (props) => {
             <NavLink exact to='/sign-up' className='nav'>Sign Up</NavLink>
           </div>
         }
+        {/* {
+          props.user.name && 
+          <NavLink exact to='/' className='nav'>Sign Out</NavLink>
+        } */}
       </nav>
     </header>
   )

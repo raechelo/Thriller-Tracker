@@ -1,0 +1,15 @@
+.Card {
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+
+  article {
+    margin-bottom: 1rem;
+
+    &:hover {
+      box-shadow: 2px 2px 2px solid rgb(20, 20, 20);
+    }
+  }
+}
