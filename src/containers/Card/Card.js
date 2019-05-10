@@ -1,15 +1,38 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-const Card = (props) => {
-  const mappedMovies = props.movies.length && props.movies.map(p => {
-    return <h2>{p.title}</h2>
-  })
-  return (
-    <article>
-      {mappedMovies}
-    </article>
-  )
+class Card extends Component {
+  constructor() {
+    super()
+    this.state = {
+      expanded: false
+    }
+  }
+
+  handleClick = () => {
+    this.setState( { expanded: !this.state.expanded } )
+  }
+
+  render() {
+    const expandedCard = <article>
+      <h2>{this.props.title}</h2>
+      </article>
+
+    const contractedCard = this.props.movies.map(p => {
+      return (
+      <article onClick={this.handleClick}>
+        <img src={p.posterImage} />
+        {this.state.expanded && expandedCard}
+      </article>)
+      })
+
+
+    return(
+      <div className="Card">
+        {contractedCard}
+      </div>
+    )
+  }
 }
 
 const mapStateToProps = (state) => ({

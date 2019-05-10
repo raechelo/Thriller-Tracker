@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Card from '../../containers/Card/Card';
 
-const Home = (props) => {
-const movieImage = props.movies.length && props.movies.map(m => (m.title && <img src={m.posterImage} key={m.id} alt="poster" />))
+const Home = () => {
 
   return (
-    <section className='Home'>{movieImage}</section>
+    <section className='Home'><Card /></section>
   )
 }
 
