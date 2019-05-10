@@ -2,10 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Card from '../../containers/Card/Card';
 
-const Home = () => {
+const Home = (props) => {
 
   return (
-    <section className='Home'><Card /></section>
+    <section className='Home'>
+    {
+      props.movies.map(m => (<Card m={m}/>))
+    }
+    </section>
   )
 }
 

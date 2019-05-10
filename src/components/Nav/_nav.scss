@@ -20,13 +20,11 @@
       border: 3px solid transparent;
       padding: 10px;
       &:hover {
-        border: 3px solid $accent;
         color: $accent;
       }
     }
 
     .active {
-      border: 3px solid $accent;
       color: $accent;
     }
   }
