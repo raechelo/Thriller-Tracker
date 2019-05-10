@@ -16,20 +16,15 @@ class Card extends Component {
   render() {
     const expandedCard = <article>
       <h2>{this.props.title}</h2>
+      <h4>{this.props.rating}</h4>
+      <p>{this.props.m.synopsis}</p>
       </article>
 
-    const contractedCard = this.props.movies.map(p => {
-      return (
-      <article onClick={this.handleClick}>
-        <img src={p.posterImage} />
-        {this.state.expanded && expandedCard}
-      </article>)
-      })
-
+    const contractedCard = <img src={this.props.m.posterImage} onClick={this.handleClick} />
 
     return(
       <div className="Card">
-        {contractedCard}
+        { this.state.expanded ? expandedCard : contractedCard }
       </div>
     )
   }
