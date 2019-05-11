@@ -36,10 +36,21 @@ class SignUp extends Component {
     }
     fetch(url, options)
     .then(response => {
+      console.log('response ok?:', response.ok)
+      console.log('response:', response)
       this.setState({status: response.status})
-      this.props.logInUser(user)
+      response.ok ? this.props.logInUser(user) : this.showError()
     })
     .catch(error => console.log('error', error));
+  }
+
+  showError = () => {
+    const inputs = document.querySelectorAll('input');
+    const errorText = document.querySelector('p.error');
+    inputs.forEach(input => {
+      input.classList += ' error'
+    })
+    errorText.style.color = '#760a0a';
   }
 
   handleChange = (e) => {
@@ -54,6 +65,7 @@ class SignUp extends Component {
         <input onChange={ this.handleChange } name='name' type='text' id="name" className='userProp' />
         <label htmlFor="email">Email</label>
         <input onChange={ this.handleChange } name='email' type='email' id="email" className='userProp' />
+        <p class="error">Email has already been used</p>
         <label htmlFor="password">Password</label>
         <input onChange={ this.handleChange } name='password' type='password' id="password" className='userProp' />
         <button>Create</button>
