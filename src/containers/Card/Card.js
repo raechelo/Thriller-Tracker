@@ -14,10 +14,14 @@ class Card extends Component {
   }
 
   render() {
-    const expandedCard = <article>
-      <h2>{this.props.title}</h2>
-      <h4>{this.props.rating}</h4>
+    const expandedCard = <article onClick={this.handleClick}>
+    <div className="movie-info">
+      <h2>{this.props.m.title}</h2>
+      <h6>{this.props.m.rating}</h6>
+      <button><i class="fas fa-heart"></i></button>
       <p>{this.props.m.synopsis}</p>
+    </div>
+      <img src={this.props.m.posterImage} />
       </article>
 
     const contractedCard = <img src={this.props.m.posterImage} onClick={this.handleClick} />

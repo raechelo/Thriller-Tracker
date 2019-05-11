@@ -1,10 +1,6 @@
-.Content-Container {
+.Content-Container, .Home {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   padding: 10px;
-  
-  img {
-    margin: .5rem;
-  }
 }

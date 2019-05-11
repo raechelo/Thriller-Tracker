@@ -20,8 +20,8 @@ const Nav = (props) => {
         {
           !props.user.name &&
           <div>
-            <NavLink exact to='/login' className='nav'>Login</NavLink>
-            <NavLink exact to='/sign-up' className='nav'>Sign Up</NavLink>
+            <NavLink exact to='/login' className='nav'> <i class="fas fa-skull"></i> Login</NavLink>
+            <NavLink exact to='/sign-up' className='nav'><i class="fas fa-book-dead"></i> Sign Up</NavLink>
           </div>
         }
         {/* {
