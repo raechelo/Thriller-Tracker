@@ -6,8 +6,22 @@ describe('SignUp', () => {
 
   let wrapper;
 
-  it('should match the snapshot with all the data passed in', () => {
+  beforeEach(() => {
     wrapper = shallow( <SignUp /> )
-    expect(wrapper).toMatchSnapshot()
   })
+
+  it('should match the snapshot with all the data passed in', () => {
+
+    expect(wrapper).toMatchSnapshot()
+  });
+
+  it('should handle change', () => {
+    wrapper.setState({ email: '', password: ''})
+    const e = { target: { name: 'email', value: 'godofolympus@gmail.com' } }
+
+    wrapper.instance().handleChange(e);
+    expect(wrapper.state('email')).toEqual('godofolympus@gmail.com')
+  });
+
+
 })
