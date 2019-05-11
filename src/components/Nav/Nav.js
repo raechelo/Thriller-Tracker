@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-const Nav = (props) => {
+export const Nav = (props) => {
   return (
     <header className="Header">
       {/* <div>

@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { setMovies } from '../../actions';
 // import PropTypes from 'prop-types';
 
-class App extends Component {
+export class App extends Component {
   constructor() {
     super()
     this.state = {

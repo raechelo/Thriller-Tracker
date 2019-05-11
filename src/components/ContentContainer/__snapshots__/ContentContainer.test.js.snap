@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContentContainer should match the snapshot with all the data passed in 1`] = `
+<section
+  className="Content-Container"
+>
+  <Route
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(Home)",
+        "type": [Function],
+      }
+    }
+    exact={true}
+    path="/"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/favorites"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/login"
+  />
+  <Route
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(SignUp)",
+        "type": [Function],
+      }
+    }
+    exact={true}
+    path="/sign-up"
+  />
+</section>
+`;

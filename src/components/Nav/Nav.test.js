@@ -1,13 +1,19 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { SignUp } from './SignUp';
+import { Nav } from './Nav';
 
-describe('SignUp', () => {
+describe('Nav', () => {
 
   let wrapper;
 
+  let user = { name: 'Zeus' }
+
+  beforeEach(() => {
+    wrapper = shallow( <Nav user={user} /> )
+  });
+
   it('should match the snapshot with all the data passed in', () => {
-    wrapper = shallow( <SignUp /> )
     expect(wrapper).toMatchSnapshot()
-  })
-})
+  });
+  
+});

@@ -6,7 +6,7 @@ import Login from '../Login/Login';
 import SignUp from '../SignUp/SignUp';
 import { connect } from 'react-redux';
 
-const ContentContainer = (props) => {
+export const ContentContainer = (props) => {
   return (
     <section className='Content-Container'>
       <Route exact path='/' component={Home} />
