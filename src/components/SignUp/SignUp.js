@@ -36,10 +36,17 @@ export class SignUp extends Component {
     }
     fetch(url, options)
     .then(response => {
+      console.log('response ok?:', response.ok)
+      console.log('response:', response)
       this.setState({status: response.status})
-      this.props.logInUser(user)
+      response.ok ? this.props.logInUser(user) : this.showError()
     })
     .catch(error => console.log('error', error));
+  }
+
+  showError = () => {
+    const errorText = document.querySelector('.error');
+    errorText.style.color = '#760a0a';
   }
 
   handleChange = (e) => {
@@ -50,6 +57,7 @@ export class SignUp extends Component {
     return (
       <form className="user-form" onSubmit={this.handleSubmit}>
         <h2>Create Account</h2>
+        <p class="error">Email has already been used</p>
         <label htmlFor="name">Name</label>
         <input onChange={ this.handleChange } name='name' type='text' id="name" className='userProp' />
         <label htmlFor="email">Email</label>
