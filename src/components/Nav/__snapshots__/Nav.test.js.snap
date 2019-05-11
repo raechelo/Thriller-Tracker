@@ -1,3 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Nav should match the snapshot with all the data passed in 1`] = `undefined`;
+exports[`Nav should match the snapshot with all the data passed in 1`] = `
+<header
+  className="Header"
+>
+  <nav>
+    <div>
+      <NavLink
+        className="nav fave"
+        exact={true}
+        to="/favorites"
+      >
+        Favorites
+      </NavLink>
+      <NavLink
+        className="nav"
+        exact={true}
+        to="/"
+      >
+        Sign Out
+      </NavLink>
+    </div>
+    <NavLink
+      className="nav title"
+      exact={true}
+      to="/"
+    >
+      <h1>
+        movie mania
+      </h1>
+    </NavLink>
+  </nav>
+</header>
+`;

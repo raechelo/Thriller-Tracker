@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-class Card extends Component {
+export class Card extends Component {
   constructor() {
     super()
     this.state = {

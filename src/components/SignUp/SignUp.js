@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logInUser } from '../../actions'
 
-class SignUp extends Component {
+export class SignUp extends Component {
   constructor() {
     super();
     this.state = {
