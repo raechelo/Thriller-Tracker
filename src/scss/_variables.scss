@@ -6,5 +6,6 @@ $bodyfont: 'Roboto', sans-serif;
 // colors
 $accent: hsla(0, 85%, 25%, 1);
 $darkaccent: darken($accent, 30%);
+$lightaccent: lighten($accent, 30%);
 
 // animations
