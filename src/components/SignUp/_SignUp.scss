@@ -11,17 +11,6 @@
     text-align: center
   }
 
-  #name, #password {
-    margin-bottom: 29px;
-  }
-
-  p.error {
-    margin: 0;
-    color: transparent;
-    padding: 5px 0;
-    font-size: 16px;
-  }
-
   input {
     display: block;
     font-family: $bodyfont;
@@ -33,10 +22,6 @@
       border: 2px solid $accent;
       outline: none;
     }
-  }
-
-  input.error {
-    border: 2px solid $accent;
   }
 
   label {
