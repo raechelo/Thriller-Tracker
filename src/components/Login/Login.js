@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { logInUser } from '../../actions';
 
 export class Login extends Component {
   constructor() {
@@ -17,7 +19,8 @@ export class Login extends Component {
   }
 
   userLogin = (state) => {
-    const {email, password} = state
+    const {email, password} = state;
+    const user = {email, password};
     const url = 'http://localhost:3000/api/users'
     const options = {
       method: 'POST',
@@ -33,13 +36,9 @@ export class Login extends Component {
     .then(response => {
       this.setState({status: response.status})
       console.log(response.ok)
-      response.ok ? this.loginUser() : this.showError();
+      response.ok ? this.props.logInUser(user) : this.showError();
     })
     .catch(error => console.log('error', error));
-  }
-
-  loginUser = () => {
-    // Need to make redux action to login user
   }
 
   showError = () => {
@@ -68,4 +67,8 @@ export class Login extends Component {
   }
 }
 
-export default Login;
+export const mapDispatchToProps = (dispatch) => ({
+  logInUser: (user) => dispatch(logInUser(user))
+})
+
+export default connect(null, mapDispatchToProps)(Login);
