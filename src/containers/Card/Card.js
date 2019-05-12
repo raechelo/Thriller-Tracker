@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import star from '../../media/images/star-solid.svg';
 
 export class Card extends Component {
   constructor() {
@@ -21,13 +22,14 @@ export class Card extends Component {
       <button><i class="fas fa-heart"></i></button>
       <p>{this.props.m.synopsis}</p>
     </div>
-      <img src={this.props.m.posterImage} />
+      <img src={this.props.m.posterImage} alt={this.props.m.title + ' poster'} />
       </article>
 
-    const contractedCard = <img src={this.props.m.posterImage} onClick={this.handleClick} />
+    const contractedCard = <img src={this.props.m.posterImage} onClick={this.handleClick} alt={this.props.m.title + ' poster'} />
 
     return(
       <div className="Card">
+        <img src={star} alt="star" />
         { this.state.expanded ? expandedCard : contractedCard }
       </div>
     )
