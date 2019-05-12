@@ -49,9 +49,19 @@
   }
 }
 
-.fa-heart.contracted {
-  position: absolute;
-  top: -15px;
-  left: -15px;
-  color: #999;
+.fa-heart {
+  &.contracted {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    color: #999;
+  }
+
+  &.favorited {
+    color: $accent;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
 }
