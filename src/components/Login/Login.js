@@ -56,7 +56,7 @@ export class Login extends Component {
     return (
       <form className="user-form" onSubmit={this.handleSubmit}>
         <h2>Login</h2>
-        <p class="error">Email and Password do not match</p>
+        <p className="error">Email and Password do not match</p>
         <label htmlFor="email">Email</label>
         <input onChange={ this.handleChange } name="email" type="email" id="email" placeholder="Email" />
         <label htmlFor="password">Password</label>

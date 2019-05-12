@@ -5,10 +5,11 @@ import './scss/index.scss';
 import App from './containers/App/App';
 import { rootReducer } from './reducers';
 import { Provider } from 'react-redux'; 
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension';
+import thunk from 'redux-thunk';
 
-const store = createStore(rootReducer, composeWithDevTools())
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
 const router = (
   <Provider store={store} >
     <BrowserRouter> 
