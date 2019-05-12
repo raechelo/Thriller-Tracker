@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import fetchMovies from '../../api/fetchMovies';
+import { fetchMovies } from '../../api/fetchMovies';
 import Nav from '../../components/Nav/Nav';
 import ContentContainer from '../../components/ContentContainer/ContentContainer';
 import { connect } from 'react-redux';
