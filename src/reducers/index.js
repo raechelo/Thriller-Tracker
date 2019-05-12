@@ -1,8 +1,10 @@
-import { moviesReducer } from './moviesReducer';
-import { userReducer } from './userReducer';
+import { movies, hasErrored, isLoading } from './moviesReducer';
+import { user } from './userReducer';
 import { combineReducers } from 'redux';
 
 export const rootReducer = combineReducers({
-  movies: moviesReducer,
-  user: userReducer
+  movies,
+  user,
+  isLoading,
+  error: hasErrored
 });
