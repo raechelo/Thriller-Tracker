@@ -36,8 +36,4 @@ export class Card extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  movies: state.movies
-})
-
-export default connect(mapStateToProps)(Card);
+export default Card;
