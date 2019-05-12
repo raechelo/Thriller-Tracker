@@ -1,22 +1,20 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { logOutUser } from '../../actions';
 
 export const Nav = (props) => {
   return (
     <header className="Header">
-      {/* <div>
-        <h1>movie mania</h1>
-      </div> */}
       <nav>
+        <NavLink exact to='/' className='nav title'><h1>movie mania</h1></NavLink>
         {
           props.user.name && 
           <div>
             <NavLink exact to='/favorites' className='nav fave'>Favorites</NavLink>
-            <NavLink exact to='/' className='nav'>Sign Out</NavLink>
+            <NavLink exact to='/' className='nav' onClick={props.logOutUser}>Sign Out</NavLink>
           </div>
         }
-        <NavLink exact to='/' className='nav title'><h1>movie mania</h1></NavLink>
         {
           !props.user.name &&
           <div>
@@ -24,10 +22,6 @@ export const Nav = (props) => {
             <NavLink exact to='/sign-up' className='nav'><i className="fas fa-book-dead"></i> Sign Up</NavLink>
           </div>
         }
-        {/* {
-          props.user.name && 
-          <NavLink exact to='/' className='nav'>Sign Out</NavLink>
-        } */}
       </nav>
     </header>
   )
@@ -35,6 +29,10 @@ export const Nav = (props) => {
 
 export const mapStateToProps = (state) => ({
   user: state.user
+})
+
+export const mapDispatchToProps = (dispatch) => ({
+  logOutUser: () => dispatch(logOutUser())
 })
 
 export default connect(mapStateToProps)(Nav);
