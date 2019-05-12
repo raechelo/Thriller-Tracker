@@ -30,8 +30,21 @@ export class Login extends Component {
       })
     }
     fetch(url, options)
-    .then(response => this.setState({status: response.status}))
+    .then(response => {
+      this.setState({status: response.status})
+      console.log(response.ok)
+      response.ok ? this.loginUser() : this.showError();
+    })
     .catch(error => console.log('error', error));
+  }
+
+  loginUser = () => {
+    // Need to make redux action to login user
+  }
+
+  showError = () => {
+    const errorText = document.querySelector('.error');
+    errorText.style.color = '#760a0a';
   }
 
   handleChange = (e) => {
@@ -43,6 +56,7 @@ export class Login extends Component {
     return (
       <form className="user-form" onSubmit={this.handleSubmit}>
         <h2>Login</h2>
+        <p class="error">Email and Password do not match</p>
         <label htmlFor="email">Email</label>
         <input onChange={ this.handleChange } name="email" type="email" id="email" placeholder="Email" />
         <label htmlFor="password">Password</label>
