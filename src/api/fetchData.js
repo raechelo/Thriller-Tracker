@@ -1,4 +1,4 @@
-const fetchData = async (url, options) => {
+export const fetchData = async (url, options) => {
   const response = await fetch(url, options)
   if (response.ok) {
     return await response.json()
@@ -6,5 +6,3 @@ const fetchData = async (url, options) => {
     throw Error(response.statusText)
   }
 }
-
-export default fetchData;

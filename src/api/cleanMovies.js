@@ -1,4 +1,4 @@
-const cleanMovies = (movies) => {
+export const cleanMovies = (movies) => {
   return movies.map(movie => {
     return ({
       id: movie.id,
@@ -10,5 +10,3 @@ const cleanMovies = (movies) => {
     })
   })
 }
-
-export default cleanMovies;
