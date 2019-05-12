@@ -29,7 +29,7 @@ export class Card extends Component {
 
     return(
       <div className="Card">
-        <img src={star} alt="star" />
+        {!this.state.expanded && <i class="fas fa-heart fa-2x contracted"></i>}
         { this.state.expanded ? expandedCard : contractedCard }
       </div>
     )
