@@ -4,7 +4,6 @@ import Nav from '../../components/Nav/Nav';
 import ContentContainer from '../../components/ContentContainer/ContentContainer';
 import { connect } from 'react-redux';
 import key from '../../utils/apikey';
-// import PropTypes from 'prop-types';
 
 export class App extends Component {
   constructor() {
@@ -20,10 +19,6 @@ export class App extends Component {
   }
 
   render() {
-    // const { movies } = this.state;
-    // const displayMovies = movies.length && movies.map(movie => {
-    //   return <img src={movie.posterImage} />
-    // }) 
     return (
       <div className="App">
         <Nav />
@@ -32,7 +27,6 @@ export class App extends Component {
     );
   }
 }
-
 
 export const mapDispatchToProps = (dispatch) => ({
   fetchMovies: (url) => dispatch(fetchMovies(url))
