@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { fetchMovies } from '../../api/fetchMovies';
+import { fetchMovies } from '../../thunks/fetchMovies';
 import Nav from '../../components/Nav/Nav';
 import ContentContainer from '../../components/ContentContainer/ContentContainer';
 import { connect } from 'react-redux';
-import { setMovies } from '../../actions';
+import key from '../../utils/apikey';
 // import PropTypes from 'prop-types';
 
 export class App extends Component {
@@ -15,8 +15,8 @@ export class App extends Component {
   }
   
   componentDidMount = async () => {
-    const movies = await fetchMovies()
-    this.props.setMovies(movies);
+    const url = `https://api.themoviedb.org/3/discover/movie?api_key=${key}&with_genres=27`;
+    this.props.fetchMovies(url)
   }
 
   render() {
@@ -35,7 +35,7 @@ export class App extends Component {
 
 
 export const mapDispatchToProps = (dispatch) => ({
-  setMovies: (movies) => dispatch(setMovies(movies))
+  fetchMovies: (url) => dispatch(fetchMovies(url))
 });
 
 export default connect(null, mapDispatchToProps)(App);
