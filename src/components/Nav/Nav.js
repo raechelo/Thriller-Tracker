@@ -9,17 +9,17 @@ export const Nav = (props) => {
       <nav>
         <NavLink exact to='/' className='nav title'><h1>movie mania</h1></NavLink>
         {
-          props.user.name && 
+          props.user.email && 
           <div>
             <NavLink exact to='/favorites' className='nav fave'>Favorites</NavLink>
-            <NavLink exact to='/' className='nav' onClick={props.logOutUser}>Sign Out</NavLink>
+            <NavLink to='/' className='nav' onClick={() => props.logOutUser()}>Sign Out</NavLink>
           </div>
         }
         {
-          !props.user.name &&
+          !props.user.email &&
           <div>
-            <NavLink exact to='/login' className='nav'> <i className="fas fa-skull"></i> Login</NavLink>
-            <NavLink exact to='/sign-up' className='nav'><i className="fas fa-book-dead"></i> Sign Up</NavLink>
+            <NavLink exact to='/login' className='nav'><i className="fas fa-skull"></i>Login</NavLink>
+            <NavLink exact to='/sign-up' className='nav'><i className="fas fa-book-dead"></i>Sign Up</NavLink>
           </div>
         }
       </nav>
