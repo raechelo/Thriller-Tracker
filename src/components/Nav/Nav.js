@@ -12,7 +12,7 @@ export const Nav = (props) => {
           props.user.email && 
           <div>
             <NavLink exact to='/favorites' className='nav fave'>Favorites</NavLink>
-            <NavLink to='/' className='nav' onClick={() => props.logOutUser()}>Sign Out</NavLink>
+            <NavLink exact to='/login' className='nav' onClick={() => props.logOutUser()}>Sign Out</NavLink>
           </div>
         }
         {
