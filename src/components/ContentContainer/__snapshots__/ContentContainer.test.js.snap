@@ -23,7 +23,15 @@ exports[`ContentContainer should match the snapshot with all the data passed in 
     path="/favorites"
   />
   <Route
-    component={[Function]}
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(Login)",
+        "type": [Function],
+      }
+    }
     exact={true}
     path="/login"
   />

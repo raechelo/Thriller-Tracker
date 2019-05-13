@@ -4,7 +4,12 @@ exports[`Card should match the snapshot with all the data passed in 1`] = `
 <div
   className="Card"
 >
+  <i
+    className="fas fa-heart fa-2x contracted"
+    onClick={[Function]}
+  />
   <img
+    alt="IT poster"
     onClick={[Function]}
   />
 </div>

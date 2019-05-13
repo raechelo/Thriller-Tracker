@@ -12,7 +12,7 @@ describe('actions', () => {
 
   it('should return a movie with a toggled favorite value', () => {
     const id = 1;
-    const expected = { type: 'FAVORITE_MOVIE', id: 1 }
+    const expected = { type: 'TOGGLE_FAVORITE_MOVIE', id: 1 }
 
     const result = actions.toggleFavoriteMovie(id);
     expect(result).toEqual(expected);
