@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import star from '../../media/images/star-solid.svg';
 import { toggleFavoriteMovie } from '../../actions';
+import CardDetails from '../CardDetails/CardDetails';
 
 export class Card extends Component {
   constructor() {
@@ -17,24 +17,12 @@ export class Card extends Component {
 
   render() {
     const { title, rating, synopsis, posterImage, id, favorited } = this.props.m;
-    const expandedCard = 
-    <article onClick={this.handleClick}>
-      <div className="movie-info">
-        <h2>{title}</h2>
-        <h6>{rating}</h6>
-        <button><i class="fas fa-heart"></i></button>
-        <p>{synopsis}</p>
-      </div>
-      <img src={posterImage} alt={title + ' poster'} />
-    </article>
-
     const heartClasses = favorited ? 'fas fa-heart fa-2x contracted favorited' : 'fas fa-heart fa-2x contracted';
-    const contractedCard = <img src={posterImage} onClick={this.handleClick} alt={title + ' poster'} />
 
     return(
       <div className="Card">
         {!this.state.expanded && <i onClick={() => this.props.toggleFavoriteMovie(id)} className={heartClasses}></i>}
-        { this.state.expanded ? expandedCard : contractedCard }
+        <img src={posterImage} alt={title + ' poster'} />
       </div>
     )
   }
