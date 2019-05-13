@@ -4,7 +4,7 @@ export const setMovies = (movies) => ({
 });
 
 export const toggleFavoriteMovie = (id) => ({
-  type: 'FAVORITE_MOVIE',
+  type: 'TOGGLE_FAVORITE_MOVIE',
   id
 });
 

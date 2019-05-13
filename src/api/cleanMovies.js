@@ -6,7 +6,8 @@ export const cleanMovies = (movies) => {
       synopsis: movie.overview,
       rating: movie.vote_average,
       releaseDate: movie.release_date,
-      posterImage: "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + movie.poster_path
+      posterImage: "https://image.tmdb.org/t/p/w185_and_h278_bestv2" + movie.poster_path,
+      favorited: false
     })
   })
 }
