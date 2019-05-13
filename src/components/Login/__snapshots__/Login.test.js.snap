@@ -8,6 +8,11 @@ exports[`Login should match the snapshot with all the data passed in 1`] = `
   <h2>
     Login
   </h2>
+  <p
+    className="error"
+  >
+    Email and Password do not match
+  </p>
   <label
     htmlFor="email"
   >

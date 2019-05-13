@@ -5,22 +5,6 @@ exports[`Nav should match the snapshot with all the data passed in 1`] = `
   className="Header"
 >
   <nav>
-    <div>
-      <NavLink
-        className="nav fave"
-        exact={true}
-        to="/favorites"
-      >
-        Favorites
-      </NavLink>
-      <NavLink
-        className="nav"
-        exact={true}
-        to="/"
-      >
-        Sign Out
-      </NavLink>
-    </div>
     <NavLink
       className="nav title"
       exact={true}
@@ -30,6 +14,28 @@ exports[`Nav should match the snapshot with all the data passed in 1`] = `
         movie mania
       </h1>
     </NavLink>
+    <div>
+      <NavLink
+        className="nav"
+        exact={true}
+        to="/login"
+      >
+        <i
+          className="fas fa-skull"
+        />
+        Login
+      </NavLink>
+      <NavLink
+        className="nav"
+        exact={true}
+        to="/sign-up"
+      >
+        <i
+          className="fas fa-book-dead"
+        />
+        Sign Up
+      </NavLink>
+    </div>
   </nav>
 </header>
 `;
