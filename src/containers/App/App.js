@@ -6,12 +6,6 @@ import { connect } from 'react-redux';
 import key from '../../utils/apikey';
 
 export class App extends Component {
-  constructor() {
-    super()
-    this.state = {
-      movies: []
-    }
-  }
   
   componentDidMount = async () => {
     const url = `https://api.themoviedb.org/3/discover/movie?api_key=${key}&with_genres=27`;
