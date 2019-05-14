@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { toggleFavoriteMovie } from '../../actions';
 import { deleteFavorite } from '../../thunks/deleteFavorite';
 import { addFavorite } from '../../thunks/addFavorite';
@@ -30,7 +31,7 @@ export class Card extends Component {
   }
 
   render() {
-    const { title, rating, synopsis, posterImage, favorited } = this.props.m;
+    const { title, rating, synopsis, posterImage, favorited, id } = this.props.m;
     const expandedCard = 
     <article onClick={this.handleClick}>
       <div className="movie-info">
@@ -46,7 +47,9 @@ export class Card extends Component {
     return(
       <div className="Card">
         {!this.state.expanded && <i onClick={this.handleFavoriteClick} className={heartClasses}></i>}
-        <img src={posterImage} alt={title + ' poster'} />
+        <Link to={`/movies/${id}`} >
+          <img src={posterImage} alt={title + ' poster'} />
+        </Link>
       </div>
     )
   }
