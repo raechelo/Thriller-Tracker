@@ -9,11 +9,10 @@ describe('fetchData', () => {
     mockUrl = 'www.placeholder.com';
     mockMovies = [{title: 'Blade Runner'}, {title: 'Jurassic Park'}];
     window.fetch = jest.fn().mockImplementation(() => {
-      Promise.resolve({
+      return Promise.resolve({
         ok: true,
         json: () => Promise.resolve(mockMovies)
-      })
-      
+      }) 
     })
   })
 
@@ -24,7 +23,7 @@ describe('fetchData', () => {
   });
 
   it('should return a parsed response if status is okay', async () => {
-    let result = fetchData(mockUrl, undefined);
+    let result = await fetchData(mockUrl);
 
     expect(result).toEqual(mockMovies);
   });
