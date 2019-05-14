@@ -2,10 +2,10 @@
   background-color: $bgcolor;
   box-shadow: 2px 2px 2px #3d3d3d;
   display: grid;
-  grid-template-areas: "img title title"
-  "img date rating"
-  "img info info"
-  "img btn btn";
+  grid-template-areas: "img title title title"
+  "img date rating fave"
+  "img info info info"
+  "img btn btn btn";
   padding: .5rem;
   width: 60%;
 
@@ -27,6 +27,12 @@
     margin: 0 auto;
   }
 
+  .fa-heart {
+    font-size: 2.5rem;
+    grid-area: fave;
+    margin: auto;
+  }
+
   h5 {
     color: $accent;
     font-family: $fancyfont;
@@ -42,7 +48,7 @@
   }
 
   h6 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     grid-area: rating;
     margin: auto auto;
     text-align: center;

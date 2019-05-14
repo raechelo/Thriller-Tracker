@@ -20,8 +20,9 @@ class CardDetails extends Component {
       return (
         <section className="Card-Details" >
           <h2>{title}</h2>
+          <i class="fas fa-heart"></i>
           <h5>Released<span>{date.slice(0, 4)}</span></h5>
-          <h6>Rated<span>{rating}/10<i class="far fa-star"></i></span></h6>
+          <h6>{rating}/10<i class="far fa-star"></i></h6>
           <p>{synopsis}</p>
           <img src={posterImage} alt={title + ' poster'} />
           <button onClick={this.handleClick} className="back-btn"><i class="fas fa-angle-left"></i>Back to results</button>
