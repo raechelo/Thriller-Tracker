@@ -3,10 +3,11 @@ import { connect } from 'react-redux';
 import Card from '../../containers/Card/Card';
 
 export const Favorites = (props) => {
-  const cards = props.movies.map(m => {
-    if(m.favorited) {
-      return <Card m={m}/>
+  const cards = props.movies.map((m, index) => {
+    if (m.favorited) {
+      return <Card key={index} m={m}/>
     }
+    return null;
   });
   return (
     <section className='Favorites'>
