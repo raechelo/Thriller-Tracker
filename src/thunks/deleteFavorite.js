@@ -1,4 +1,4 @@
-import { fetchData } from '../api/fetchData';
+import { fetchData } from '../utils/api/fetchData';
 
 export const deleteFavorite = (movie_id, user_id) => {
   return async (dispatch) => {

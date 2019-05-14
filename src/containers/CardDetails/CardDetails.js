@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class CardDetails extends Component {
   constructor() {
@@ -16,7 +17,7 @@ class CardDetails extends Component {
 
     render () {
       const {title, vote_average, overview, posterImage, release_date, favorited} = this.props
-    const heartClasses = favorited ? 'fas fa-heart fa-2x favorited' : 'fas fa-heart fa-2x';
+      const heartClasses = favorited ? 'fas fa-heart fa-2x favorited' : 'fas fa-heart fa-2x';
 
       return (
         <section className="Card-Details" >
@@ -31,6 +32,10 @@ class CardDetails extends Component {
         </section>
       )
   }
+}
+
+CardDetails.propTypes = {
+  m: PropTypes.object
 }
 
 export default CardDetails;
