@@ -18,7 +18,15 @@ exports[`ContentContainer should match the snapshot with all the data passed in 
     path="/"
   />
   <Route
-    component={[Function]}
+    component={
+      Object {
+        "$$typeof": Symbol(react.memo),
+        "WrappedComponent": [Function],
+        "compare": null,
+        "displayName": "Connect(Favorites)",
+        "type": [Function],
+      }
+    }
     exact={true}
     path="/favorites"
   />
@@ -47,6 +55,10 @@ exports[`ContentContainer should match the snapshot with all the data passed in 
     }
     exact={true}
     path="/sign-up"
+  />
+  <Route
+    path="/movies/:id"
+    render={[Function]}
   />
 </section>
 `;
