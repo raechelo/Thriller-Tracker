@@ -9,22 +9,23 @@ export class Card extends Component {
 
   handleFavoriteClick = () => {
     const user_id = this.props.user.id
-    if (!user_id) return;
+    if (!user_id) {
+      return alert('Login or Signup to favorite movies')
+    }
     const { id, favorited } = this.props.m;
     const movie = this.props.m;
     
+    this.props.toggleFavoriteMovie(id);
     if (favorited) {
-      this.props.toggleFavoriteMovie(id);
       this.props.deleteFavorite(id, user_id);
     } else {
-      this.props.toggleFavoriteMovie(id);
       this.props.addFavorite(movie, user_id);
     }
   }
 
   render() {
     const { id, title, posterImage, favorited } = this.props.m;
-    const heartClasses = favorited ? 'fas fa-heart fa-2x contracted favorited' : 'fas fa-heart fa-2x';
+    const heartClasses = favorited ? 'fas fa-heart fa-2x favorited' : 'fas fa-heart fa-2x';
 
     return(
       <div className="Card">
