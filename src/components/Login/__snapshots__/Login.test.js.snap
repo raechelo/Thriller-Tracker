@@ -38,10 +38,7 @@ exports[`Login should match the snapshot with all the data passed in 1`] = `
     type="password"
   />
   <button>
-    Login 
-    <i
-      class="fas fa-angle-right"
-    />
+    Login
   </button>
 </form>
 `;
