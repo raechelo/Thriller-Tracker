@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { logInUser } from '../../actions';
 import { fetchData } from '../../utils/api/fetchData';
  
@@ -65,6 +66,11 @@ export class Login extends Component {
     )
   }
 }
+
+Login.propTypes = {
+  logInUser: PropTypes.func
+}
+
 
 export const mapDispatchToProps = (dispatch) => ({
   logInUser: (user) => dispatch(logInUser(user))

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { toggleFavoriteMovie } from '../../actions';
 import { deleteFavorite } from '../../thunks/deleteFavorite';
 import { addFavorite } from '../../thunks/addFavorite';
@@ -36,6 +37,14 @@ export class Card extends Component {
       </div>
     )
   }
+}
+
+Card.propTypes = {
+  toggleFavoriteMovie: PropTypes.func,
+  addFavorite: PropTypes.func,
+  deleteFavorite: PropTypes.func,
+  m: PropTypes.object,
+  user: PropTypes.object
 }
 
 export const mapStateToProps = (state) => ({

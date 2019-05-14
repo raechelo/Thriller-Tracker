@@ -23,7 +23,7 @@ describe('fetchData', () => {
     expect(window.fetch).toHaveBeenCalledWith(mockUrl, undefined)
   });
 
-  it.skip('should return a parsed response if status is okay', async () => {
+  it('should return a parsed response if status is okay', async () => {
     let result = fetchData(mockUrl, undefined);
 
     expect(result).toEqual(mockMovies);

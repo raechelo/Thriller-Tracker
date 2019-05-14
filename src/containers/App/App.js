@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { fetchMovies } from '../../thunks/fetchMovies';
 import Nav from '../../components/Nav/Nav';
 import ContentContainer from '../../components/ContentContainer/ContentContainer';
-import { connect } from 'react-redux';
 import key from '../../utils/apikey';
 
 export class App extends Component {
@@ -22,6 +23,10 @@ export class App extends Component {
       </div>
     );
   }
+}
+
+App.propTypes = {
+  fetchMovies: PropTypes.func
 }
 
 export const mapDispatchToProps = (dispatch) => ({
