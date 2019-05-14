@@ -5,10 +5,17 @@ import { Favorites } from './Favorites';
 describe('Favorites', () => {
 
   let wrapper;
-  let favorited = [{title: 'Isle of Dogs', favorite: true}]
+  let mockMovies = [
+    {title: 'Isle of Dogs', favorite: true},
+    {title: 'Forest Gump', favorite: false}
+  ]
 
   beforeEach(() => {
-    wrapper = shallow( <Favorites movies={favorited} /> )
+    wrapper = shallow( 
+      <Favorites 
+        movies={mockMovies} 
+      /> 
+    )
   });
 
   it('should match the snapshot with all the data passed in', () => {
