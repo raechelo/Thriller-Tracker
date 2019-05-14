@@ -8,7 +8,7 @@ export const Home = (props) => {
   return (
     <section className='Home'>
     {
-      props.movies.map(m => (<Link to={`/movies/${m.id}`} ><Card m={m}/> </Link>))
+      props.movies.map(m => <Card m={m}/>)
     }
     </section>
   )
