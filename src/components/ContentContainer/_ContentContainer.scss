@@ -1,3 +1,10 @@
+.Content-Container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+
 .error {
   margin: 0;
   color: transparent;

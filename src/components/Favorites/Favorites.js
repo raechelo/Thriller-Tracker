@@ -1,9 +1,22 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import Card from '../../containers/Card/Card';
 
-export const Favorites = () => {
+export const Favorites = (props) => {
+  const cards = props.movies.map(m => {
+    if(m.favorited) {
+      return <Card m={m}/>
+    }
+  });
   return (
-    <h2>Favorites</h2>
+    <section className='Favorites'>
+      {cards}
+    </section>
   )
 }
 
-export default Favorites;
+export const mapStateToProps = (state) => ({
+  movies: state.movies
+})
+
+export default connect(mapStateToProps)(Favorites);

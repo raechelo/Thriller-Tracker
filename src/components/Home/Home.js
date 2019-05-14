@@ -1,15 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Card from '../../containers/Card/Card';
-import { Link } from 'react-router-dom';
 
 export const Home = (props) => {
-
+  const cards = props.movies.map(m => <Card m={m}/>)
   return (
     <section className='Home'>
-    {
-      props.movies.map(m => <Card m={m}/>)
-    }
+      {cards}
     </section>
   )
 }
