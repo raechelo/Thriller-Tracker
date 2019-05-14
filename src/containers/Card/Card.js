@@ -6,47 +6,29 @@ import { deleteFavorite } from '../../thunks/deleteFavorite';
 import { addFavorite } from '../../thunks/addFavorite';
 
 export class Card extends Component {
-  constructor() {
-    super()
-    this.state = {
-      expanded: false
-    }
-  }
-
-  handleClick = () => {
-    this.setState( { expanded: !this.state.expanded } )
-  }
 
   handleFavoriteClick = () => {
+    const user_id = this.props.user.id
+    if (!user_id) return;
     const { id, favorited } = this.props.m;
-    if (!this.props.user.id) return;
+    const movie = this.props.m;
     
     if (favorited) {
       this.props.toggleFavoriteMovie(id);
-      this.props.deleteFavorite(this.props.m.id, this.props.user.id);
+      this.props.deleteFavorite(id, user_id);
     } else {
       this.props.toggleFavoriteMovie(id);
-      this.props.addFavorite(this.props.m, this.props.user.id);
+      this.props.addFavorite(movie, user_id);
     }
   }
 
   render() {
-    const { title, rating, synopsis, posterImage, favorited, id } = this.props.m;
-    const expandedCard = 
-    <article onClick={this.handleClick}>
-      <div className="movie-info">
-        <h2>{title}</h2>
-        <h6>{rating}</h6>
-        <button><i class="fas fa-heart"></i></button>
-        <p>{synopsis}</p>
-      </div>
-      <img src={posterImage} alt={title + ' poster'} />
-    </article>
-    const heartClasses = favorited ? 'fas fa-heart fa-2x contracted favorited' : 'fas fa-heart fa-2x contracted';
+    const { id, title, posterImage, favorited } = this.props.m;
+    const heartClasses = favorited ? 'fas fa-heart fa-2x contracted favorited' : 'fas fa-heart fa-2x';
 
     return(
       <div className="Card">
-        {!this.state.expanded && <i onClick={this.handleFavoriteClick} className={heartClasses}></i>}
+        <i onClick={this.handleFavoriteClick} className={heartClasses}></i>
         <Link to={`/movies/${id}`} >
           <img src={posterImage} alt={title + ' poster'} />
         </Link>
