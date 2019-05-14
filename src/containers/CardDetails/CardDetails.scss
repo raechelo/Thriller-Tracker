@@ -4,7 +4,8 @@
   display: grid;
   grid-template-areas: "img title title"
   "img date rating"
-  "img info info";
+  "img info info"
+  "img btn btn";
   padding: .5rem;
   width: 60%;
 
@@ -33,6 +34,7 @@
     grid-area: date;
     margin: auto;
     text-align: center;
+    text-shadow: 1px 1px 1px lighten($accent, 70%);
 
     span {
       display: block;
@@ -62,3 +64,26 @@
   }
 }
 
+.back-btn {
+  background-color: white;
+  color: $accent;
+  font-family: $bodyfont;
+  font-size: 1rem;
+  grid-area: btn;
+  margin: auto;
+  z-index: 5;
+
+  &:hover {
+    background-image: linear-gradient(to left, $accent 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .8s ease-out;
+    color: white;
+    cursor: pointer;
+
+    i {
+      animation: carat .25s ease-in;
+    }
+  }
+
+}
