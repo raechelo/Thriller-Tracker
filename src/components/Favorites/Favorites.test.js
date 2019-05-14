@@ -2,14 +2,13 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { Favorites } from './Favorites';
 
-const mockMovies = [
-  {title: 'Forest Gump'},
-  {title: 'Star Wars'}
-]
-
 describe('Favorites', () => {
 
   let wrapper;
+  let mockMovies = [
+    {title: 'Isle of Dogs', favorite: true},
+    {title: 'Forest Gump', favorite: false}
+  ]
 
   beforeEach(() => {
     wrapper = shallow( 
@@ -20,6 +19,6 @@ describe('Favorites', () => {
   });
 
   it('should match the snapshot with all the data passed in', () => {
-    expect(wrapper).toMatchSnapshot()
+    expect(wrapper).toMatchSnapshot();
   })
 })

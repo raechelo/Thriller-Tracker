@@ -25,7 +25,7 @@ describe('Login', () => {
     expect(mockUserLogin).toHaveBeenCalledWith(...expected);
   });
 
-  it('should handle state', () => {
+  it('should handle change', () => {
     wrapper.setState({ email: '', password: ''})
     const e = { target: { name: 'email', value: 'godofolympus@gmail.com' } }
 
