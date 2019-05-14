@@ -64,7 +64,7 @@ export class SignUp extends Component {
         <input onChange={ this.handleChange } name='email' type='email' id="email" className='userProp' />
         <label htmlFor="password">Password</label>
         <input onChange={ this.handleChange } name='password' type='password' id="password" className='userProp' />
-        <button>Create</button>
+        <button>Create <i class="fas fa-angle-right"></i></button>
         {this.state.status === 200 && <Redirect to='/' />}
       </form>
     ) 

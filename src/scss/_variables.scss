@@ -4,8 +4,44 @@ $fancyfont: 'Creepster', cursive;
 $bodyfont: 'Roboto', sans-serif;
 
 // colors
-$accent: hsla(0, 85%, 25%, 1);
+$accent: hsl(0, 86%, 25%);
 $darkaccent: darken($accent, 30%);
 $lightaccent: lighten($accent, 30%);
+$bgcolor: rgba(61, 58, 58, 0.6);
 
 // animations
+
+@keyframes carat-left {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(-40%);
+  }
+  100% {
+    transform: translateX(-80%);
+  }
+}
+
+@keyframes carat-right {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
