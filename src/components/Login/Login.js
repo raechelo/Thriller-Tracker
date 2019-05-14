@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logInUser } from '../../actions';
-
+import { fetchData } from '../../api/fetchData';
+ 
 export class Login extends Component {
   constructor() {
     super()
     this.state = {
       email: '',
       password: '',
-      status: 0
+      status: ''
     }
   }
 
@@ -20,7 +21,6 @@ export class Login extends Component {
 
   userLogin = (state) => {
     const {email, password} = state;
-    const user = {email, password};
     const url = 'http://localhost:3000/api/users'
     const options = {
       method: 'POST',
@@ -32,13 +32,12 @@ export class Login extends Component {
         password
       })
     }
-    fetch(url, options)
-    .then(response => {
-      this.setState({status: response.status})
-      console.log(response.ok)
-      response.ok ? this.props.logInUser(user) : this.showError();
+    fetchData(url, options)
+    .then(result => {
+      this.setState({status: result.status});
+      this.props.logInUser(result.data);
     })
-    .catch(error => console.log('error', error));
+    .catch(error => this.showError());
   }
 
   showError = () => {
@@ -60,8 +59,8 @@ export class Login extends Component {
         <input onChange={ this.handleChange } name="email" type="email" id="email" placeholder="Email" />
         <label htmlFor="password">Password</label>
         <input onChange={ this.handleChange } name="password" type="password" id="password" placeholder="Password" />
-        <button>Login <i class="fas fa-angle-right"></i></button>
-        {this.state.status === 200 && <Redirect to="/" />}
+        <button>Login</button>
+        {this.state.status && <Redirect to="/" />}
       </form>
     )
   }

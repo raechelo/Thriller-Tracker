@@ -1,6 +1,5 @@
 .Card {
   color: white;
-  display: inline;
   margin: .5rem;
   max-width: 12rem;
   min-width: fit-content;
@@ -20,7 +19,6 @@
   z-index: 10;
   &.contracted {
     position: absolute;
-    // top: -15px;
     left: -10px;
     color: #efefef;
   }

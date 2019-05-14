@@ -1,35 +1,51 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { toggleFavoriteMovie } from '../../actions';
-import CardDetails from '../CardDetails/CardDetails';
+import { deleteFavorite } from '../../thunks/deleteFavorite';
+import { addFavorite } from '../../thunks/addFavorite';
 
 export class Card extends Component {
-  constructor() {
-    super()
-    this.state = {
-      expanded: false
+
+  handleFavoriteClick = () => {
+    const user_id = this.props.user.id
+    if (!user_id) {
+      return alert('Login or Signup to favorite movies')
+    }
+    const { id, favorited } = this.props.m;
+    const movie = this.props.m;
+    
+    this.props.toggleFavoriteMovie(id);
+    if (favorited) {
+      this.props.deleteFavorite(id, user_id);
+    } else {
+      this.props.addFavorite(movie, user_id);
     }
   }
 
-  handleClick = () => {
-    this.setState( { expanded: !this.state.expanded } )
-  }
-
   render() {
-    const { title, rating, synopsis, posterImage, id, favorited } = this.props.m;
-    const heartClasses = favorited ? 'fas fa-heart fa-2x contracted favorited' : 'fas fa-heart fa-2x contracted';
+    const { id, title, posterImage, favorited } = this.props.m;
+    const heartClasses = favorited ? 'fas fa-heart fa-2x favorited' : 'fas fa-heart fa-2x';
 
     return(
       <div className="Card">
-        {!this.state.expanded && <i onClick={() => this.props.toggleFavoriteMovie(id)} className={heartClasses}></i>}
-        <img src={posterImage} alt={title + ' poster'} />
+        <i onClick={this.handleFavoriteClick} className={heartClasses}></i>
+        <Link to={`/movies/${id}`} >
+          <img src={posterImage} alt={title + ' poster'} />
+        </Link>
       </div>
     )
   }
 }
 
-export const mapDispatchToProps = (dispatch) => ({
-  toggleFavoriteMovie: (id) => dispatch(toggleFavoriteMovie(id))
+export const mapStateToProps = (state) => ({
+  user: state.user
 })
 
-export default connect(null, mapDispatchToProps)(Card);
+export const mapDispatchToProps = (dispatch) => ({
+  toggleFavoriteMovie: (id) => dispatch(toggleFavoriteMovie(id)),
+  addFavorite: (movie, user_id) => dispatch(addFavorite(movie, user_id)),
+  deleteFavorite: (movie_id, user_id) => dispatch(deleteFavorite(movie_id, user_id))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Card);
