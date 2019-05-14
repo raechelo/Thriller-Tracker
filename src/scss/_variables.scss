@@ -11,7 +11,7 @@ $bgcolor: rgba(170, 169, 169, 0.3);
 
 // animations
 
-@keyframes carat {
+@keyframes carat-left {
   0% {
     transform: translateX(0%);
   }
@@ -20,5 +20,17 @@ $bgcolor: rgba(170, 169, 169, 0.3);
   }
   100% {
     transform: translateX(-80%);
+  }
+}
+
+@keyframes carat-right {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(100%);
   }
 }

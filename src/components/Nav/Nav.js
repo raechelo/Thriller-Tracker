@@ -19,7 +19,7 @@ export const Nav = (props) => {
           !props.user.email &&
           <div>
             <NavLink exact to='/login' className='nav'>Login</NavLink>
-            <NavLink exact to='/sign-up' className='nav'><i className="fas fa-book-dead"></i>Sign Up</NavLink>
+            <NavLink exact to='/sign-up' className='nav'>Sign Up</NavLink>
           </div>
         }
       </nav>

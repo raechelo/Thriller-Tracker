@@ -30,18 +30,22 @@
 
   button {
     border: 2px solid $accent;
-    display: block;
     font-size: 1rem;
+    display: block;
     margin: 1rem auto;
     width: 60%;
 
     &:hover {
-      background-image: linear-gradient(to left, $accent 50%, white 50%);
-      background-size: 200% 100%;
-      background-position: right bottom;
+      background-image: linear-gradient(to left, $accent 99%, white 99%);
+      background-size: 100% 200%;
+      background-position: left bottom;
       transition: all .8s ease-out;
       color: white;
       cursor: pointer;
+
+      i {
+        animation: carat-right .25s ease-in;
+      }
     }
   }
 }

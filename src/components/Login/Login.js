@@ -60,7 +60,7 @@ export class Login extends Component {
         <input onChange={ this.handleChange } name="email" type="email" id="email" placeholder="Email" />
         <label htmlFor="password">Password</label>
         <input onChange={ this.handleChange } name="password" type="password" id="password" placeholder="Password" />
-        <button>Login</button>
+        <button>Login <i class="fas fa-angle-right"></i></button>
         {this.state.status === 200 && <Redirect to="/" />}
       </form>
     )
