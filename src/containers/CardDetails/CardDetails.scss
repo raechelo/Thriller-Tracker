@@ -1,0 +1,46 @@
+.Card-Details {
+  background-color: rgba(0, 0, 0, .3);
+  display: grid;
+  grid-template-areas: "img title title"
+  "img date rating"
+  "img info info";
+  padding: .5rem;
+  width: 60%;
+
+  img {
+    grid-area: img;
+    margin: 1rem;
+  }
+
+  h2, h6 {
+    color: $accent;
+    font-family: $fancyfont;
+  }
+
+  h2 {
+    font-size: 4rem;
+    grid-area: title;
+    margin: 0 auto;
+  }
+
+  h5 {
+    font-family: $fancyfont;
+    font-size: 1.7rem;
+    grid-area: date;
+    margin: auto;
+  }
+
+  h6 {
+    font-size: 1.5rem;
+    grid-area: rating;
+    margin: auto auto;
+  }
+
+  p {
+    color: white;
+    font-family: $bodyfont;
+    grid-area: info;
+    padding: 0 .5rem;
+  }
+}
+
