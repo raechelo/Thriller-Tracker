@@ -2,8 +2,8 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import Home from '../Home/Home';
 import Favorites from '../Favorites/Favorites';
-import Login from '../Login/Login';
-import SignUp from '../SignUp/SignUp';
+import Login from '../../containers/Login/Login';
+import SignUp from '../../containers/SignUp/SignUp';
 import { connect } from 'react-redux';
 import CardDetails from '../../containers/CardDetails/CardDetails';
 

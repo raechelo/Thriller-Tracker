@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logInUser } from '../../actions';
-import { fetchData } from '../../api/fetchData';
+import { fetchData } from '../../utils/api/fetchData';
  
 export class Login extends Component {
   constructor() {
