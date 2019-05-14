@@ -1,5 +1,5 @@
-import { fetchData } from '../api/fetchData';
-import { cleanMovies } from '../api/cleanMovies';
+import { fetchData } from '../utils/api/fetchData';
+import { cleanMovies } from '../utils/api/cleanMovies';
 
 import { isLoading, hasErrored, setMovies } from '../actions';
 

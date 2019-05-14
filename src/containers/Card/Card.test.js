@@ -24,6 +24,6 @@ describe('Card', () => {
   });
 
   it('should allow a user to favorite an item if they are logged in', () => {
-
+    
   });
 });

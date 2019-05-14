@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { logInUser } from '../../actions'
 
 export class SignUp extends Component {
@@ -69,6 +70,10 @@ export class SignUp extends Component {
       </form>
     ) 
   }
+}
+
+SignUp.propTypes = {
+  logInUser: PropTypes.func
 }
 
 export const mapDispatchToProps = dispatch => {

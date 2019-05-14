@@ -1,4 +1,4 @@
-import { fetchData } from '../api/fetchData';
+import { fetchData } from '../utils/api/fetchData';
 
 export const addFavorite = (movie, user_id) => {
   return async (dispatch) => {
