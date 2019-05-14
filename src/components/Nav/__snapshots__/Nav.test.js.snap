@@ -20,9 +20,6 @@ exports[`Nav should match the snapshot with all the data passed in 1`] = `
         exact={true}
         to="/login"
       >
-        <i
-          className="fas fa-skull"
-        />
         Login
       </NavLink>
       <NavLink
@@ -30,9 +27,6 @@ exports[`Nav should match the snapshot with all the data passed in 1`] = `
         exact={true}
         to="/sign-up"
       >
-        <i
-          className="fas fa-book-dead"
-        />
         Sign Up
       </NavLink>
     </div>

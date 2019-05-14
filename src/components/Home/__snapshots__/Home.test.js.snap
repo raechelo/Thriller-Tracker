@@ -5,7 +5,7 @@ exports[`Home should match the snapshot with all the data passed in 1`] = `
   className="Home"
 >
   <Link
-    to="Back to the Future/undefined"
+    to="/movies/undefined"
   >
     <ConnectFunction
       m={
@@ -17,7 +17,7 @@ exports[`Home should match the snapshot with all the data passed in 1`] = `
      
   </Link>
   <Link
-    to="Braveheart/undefined"
+    to="/movies/undefined"
   >
     <ConnectFunction
       m={
