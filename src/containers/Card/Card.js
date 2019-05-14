@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { toggleFavoriteMovie } from '../../actions';
-<<<<<<< HEAD
 import { deleteFavorite } from '../../thunks/deleteFavorite';
 import { addFavorite } from '../../thunks/addFavorite';
-=======
-import CardDetails from '../CardDetails/CardDetails';
->>>>>>> master
 
 export class Card extends Component {
   constructor() {
