@@ -15,12 +15,13 @@ class CardDetails extends Component {
 
 
     render () {
-      const {title, rating, synopsis, posterImage, releaseDate} = this.props
+      const {title, rating, synopsis, posterImage, releaseDate, favorited} = this.props
+    const heartClasses = favorited ? 'fas fa-heart fa-2x favorited' : 'fas fa-heart fa-2x';
 
       return (
         <section className="Card-Details" >
           <h2>{title}</h2>
-          <i class="fas fa-heart"></i>
+          <i onClick={this.handleFavoriteClick} className={heartClasses}></i>
           <h5>Released<span>{releaseDate.slice(0, 4)}</span></h5>
           <h6>{rating}/10<i class="far fa-star"></i></h6>
           <p>{synopsis}</p>
