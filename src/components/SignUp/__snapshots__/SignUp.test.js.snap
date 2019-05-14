@@ -50,7 +50,10 @@ exports[`SignUp should match the snapshot with all the data passed in 1`] = `
     type="password"
   />
   <button>
-    Create
+    Create 
+    <i
+      class="fas fa-angle-right"
+    />
   </button>
 </form>
 `;

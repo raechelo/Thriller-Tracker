@@ -37,15 +37,15 @@
     width: 60%;
 
     &:hover {
-      background-image: linear-gradient(to left, $accent 99%, white 99%);
-      background-size: 100% 200%;
-      background-position: left bottom;
+      background-image: linear-gradient(to right, white 50%, $accent 50%);
+      background-size: 200%;
+      background-position: right bottom;
       transition: all .8s ease-out;
       color: white;
       cursor: pointer;
 
       i {
-        animation: carat-right .25s ease-in;
+        animation: carat-right .25s ease-out;
       }
     }
   }

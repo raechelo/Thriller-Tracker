@@ -34,3 +34,14 @@ $bgcolor: rgba(61, 58, 58, 0.6);
     transform: translateX(100%);
   }
 }
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
