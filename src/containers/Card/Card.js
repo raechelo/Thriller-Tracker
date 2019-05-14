@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { toggleFavoriteMovie } from '../../actions';
+<<<<<<< HEAD
 import { deleteFavorite } from '../../thunks/deleteFavorite';
 import { addFavorite } from '../../thunks/addFavorite';
+=======
+import CardDetails from '../CardDetails/CardDetails';
+>>>>>>> master
 
 export class Card extends Component {
   constructor() {
@@ -41,14 +45,12 @@ export class Card extends Component {
       </div>
       <img src={posterImage} alt={title + ' poster'} />
     </article>
-
     const heartClasses = favorited ? 'fas fa-heart fa-2x contracted favorited' : 'fas fa-heart fa-2x contracted';
-    const contractedCard = <img src={posterImage} onClick={this.handleClick} alt={title + ' poster'} />
 
     return(
       <div className="Card">
         {!this.state.expanded && <i onClick={this.handleFavoriteClick} className={heartClasses}></i>}
-        { this.state.expanded ? expandedCard : contractedCard }
+        <img src={posterImage} alt={title + ' poster'} />
       </div>
     )
   }

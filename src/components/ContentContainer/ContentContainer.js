@@ -5,6 +5,7 @@ import Favorites from '../Favorites/Favorites';
 import Login from '../Login/Login';
 import SignUp from '../SignUp/SignUp';
 import { connect } from 'react-redux';
+import CardDetails from '../../containers/CardDetails/CardDetails';
 
 export const ContentContainer = (props) => {
   return (
@@ -13,6 +14,16 @@ export const ContentContainer = (props) => {
       <Route exact path='/favorites' component={Favorites} />
       <Route exact path='/login' component={Login} />
       <Route exact path='/sign-up' component={SignUp} />
+
+      <Route path='/movies/:id' render={ ( { match } ) => {
+          console.log(match)
+          const { id } = match.params
+          const movie = props.movies.find(m => m.id === parseInt(id))
+          if (movie) {
+            return <CardDetails {...movie}/>
+          }
+        }
+      } />
     </section>
   )
 }

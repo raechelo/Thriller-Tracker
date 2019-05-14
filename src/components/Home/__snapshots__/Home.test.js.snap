@@ -4,19 +4,29 @@ exports[`Home should match the snapshot with all the data passed in 1`] = `
 <section
   className="Home"
 >
-  <ConnectFunction
-    m={
-      Object {
-        "title": "Back to the Future",
+  <Link
+    to="Back to the Future/undefined"
+  >
+    <ConnectFunction
+      m={
+        Object {
+          "title": "Back to the Future",
+        }
       }
-    }
-  />
-  <ConnectFunction
-    m={
-      Object {
-        "title": "Braveheart",
+    />
+     
+  </Link>
+  <Link
+    to="Braveheart/undefined"
+  >
+    <ConnectFunction
+      m={
+        Object {
+          "title": "Braveheart",
+        }
       }
-    }
-  />
+    />
+     
+  </Link>
 </section>
 `;
