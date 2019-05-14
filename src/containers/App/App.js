@@ -8,8 +8,10 @@ import key from '../../utils/apikey';
 export class App extends Component {
   
   componentDidMount = async () => {
-    const url = `https://api.themoviedb.org/3/discover/movie?api_key=${key}&with_genres=27`;
-    this.props.fetchMovies(url)
+    if (!localStorage.length) {
+      const url = `https://api.themoviedb.org/3/discover/movie?api_key=${key}&with_genres=27`;
+      this.props.fetchMovies(url) 
+    }
   }
 
   render() {
