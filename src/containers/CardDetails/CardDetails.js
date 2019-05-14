@@ -15,18 +15,18 @@ class CardDetails extends Component {
 
 
     render () {
-      const {title, rating, synopsis, posterImage, releaseDate, favorited} = this.props
+      const {title, vote_average, overview, posterImage, release_date, favorited} = this.props
     const heartClasses = favorited ? 'fas fa-heart fa-2x favorited' : 'fas fa-heart fa-2x';
 
       return (
         <section className="Card-Details" >
           <h2>{title}</h2>
           <i onClick={this.handleFavoriteClick} className={heartClasses}></i>
-          <h5>Released<span>{releaseDate.slice(0, 4)}</span></h5>
-          <h6>{rating}/10<i class="far fa-star"></i></h6>
-          <p>{synopsis}</p>
+          <h5>Released<span>{release_date.slice(0, 4)}</span></h5>
+          <h6>{vote_average}/10<i className="far fa-star"></i></h6>
+          <p>{overview}</p>
           <img src={posterImage} alt={title + ' poster'} />
-          <button onClick={this.handleClick} className="back-btn"><i class="fas fa-angle-left"></i> Back to results</button>
+          <button onClick={this.handleClick} className="back-btn"><i className="fas fa-angle-left"></i> Back to results</button>
           {this.state.redirected && <Redirect to='/' />}
         </section>
       )
