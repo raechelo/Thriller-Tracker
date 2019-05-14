@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import star from '../../media/images/star-solid.svg';
 import { toggleFavoriteMovie } from '../../actions';
+import { deleteFavorite } from '../../thunks/deleteFavorite';
+import { addFavorite } from '../../thunks/addFavorite';
 
 export class Card extends Component {
   constructor() {
@@ -15,8 +16,21 @@ export class Card extends Component {
     this.setState( { expanded: !this.state.expanded } )
   }
 
+  handleFavoriteClick = () => {
+    const { id, favorited } = this.props.m;
+    if (!this.props.user.id) return;
+    
+    if (favorited) {
+      this.props.toggleFavoriteMovie(id);
+      this.props.deleteFavorite(this.props.m.id, this.props.user.id);
+    } else {
+      this.props.toggleFavoriteMovie(id);
+      this.props.addFavorite(this.props.m, this.props.user.id);
+    }
+  }
+
   render() {
-    const { title, rating, synopsis, posterImage, id, favorited } = this.props.m;
+    const { title, rating, synopsis, posterImage, favorited } = this.props.m;
     const expandedCard = 
     <article onClick={this.handleClick}>
       <div className="movie-info">
@@ -33,15 +47,21 @@ export class Card extends Component {
 
     return(
       <div className="Card">
-        {!this.state.expanded && <i onClick={() => this.props.toggleFavoriteMovie(id)} className={heartClasses}></i>}
+        {!this.state.expanded && <i onClick={this.handleFavoriteClick} className={heartClasses}></i>}
         { this.state.expanded ? expandedCard : contractedCard }
       </div>
     )
   }
 }
 
-export const mapDispatchToProps = (dispatch) => ({
-  toggleFavoriteMovie: (id) => dispatch(toggleFavoriteMovie(id))
+export const mapStateToProps = (state) => ({
+  user: state.user
 })
 
-export default connect(null, mapDispatchToProps)(Card);
+export const mapDispatchToProps = (dispatch) => ({
+  toggleFavoriteMovie: (id) => dispatch(toggleFavoriteMovie(id)),
+  addFavorite: (movie, user_id) => dispatch(addFavorite(movie, user_id)),
+  deleteFavorite: (movie_id, user_id) => dispatch(deleteFavorite(movie_id, user_id))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Card);
