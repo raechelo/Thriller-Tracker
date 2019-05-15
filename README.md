@@ -27,12 +27,6 @@ Outcome:
 
 ![https://giphy.com/gifs/RMlZkE6AdUnftSvfUZ/html5](https://media.giphy.com/media/RMlZkE6AdUnftSvfUZ/giphy.gif)
 
-[![screencapture-localhost-3000-2019-05-14-23-28-14.png](https://i.postimg.cc/c15bDQyb/screencapture-localhost-3000-2019-05-14-23-28-14.png)](https://postimg.cc/c6whCtJR)
-
-[![screencapture-localhost-3000-movies-458723-2019-05-14-23-34-44.png](https://i.postimg.cc/zfjdThFp/screencapture-localhost-3000-movies-458723-2019-05-14-23-34-44.png)](https://postimg.cc/mcPNstqF)
-
-[![screencapture-localhost-3000-sign-up-2019-05-14-23-35-13.png](https://i.postimg.cc/X7CQQmgr/screencapture-localhost-3000-sign-up-2019-05-14-23-35-13.png)](https://postimg.cc/Xpnfv2mW)
-
 
 ## Learning Goals
 This project was assigned to give the developer a chance to dive into Redux and continue to craft clean cut React. The developer was to learn how to effectively test Redux as well as continue testing asynchronous fetch calls. Additionally, the developer was given the option to thunks for a more thorough Redux experience.
