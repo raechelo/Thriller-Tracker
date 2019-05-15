@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { logInUser } from '../../actions'
+import { logInUser } from '../../actions';
+import { createNewUser } from '../../thunks/createNewUser';
 
 export class SignUp extends Component {
   constructor() {
@@ -11,13 +12,14 @@ export class SignUp extends Component {
       name: '',
       email: '',
       password: '',
-      status: 0
+      status: ''
     }
   }
 
-  handleSubmit = (e) => {
+  handleSubmit = async (e) => {
     e.preventDefault()
-    this.createUser(this.state);
+    const response = await this.props.createNewUser(this.state);
+    response ? this.setState({status: response.status}) : this.showError();
   }
 
   createUser = (state) => {
@@ -58,15 +60,15 @@ export class SignUp extends Component {
     return (
       <form className="user-form" onSubmit={this.handleSubmit}>
         <h2>Create Account</h2>
-        <p class="error">Email has already been used</p>
+        <p className="error">Email has already been used</p>
         <label htmlFor="name">Name</label>
         <input onChange={ this.handleChange } name='name' type='text' id="name" className='userProp' />
         <label htmlFor="email">Email</label>
         <input onChange={ this.handleChange } name='email' type='email' id="email" className='userProp' />
         <label htmlFor="password">Password</label>
         <input onChange={ this.handleChange } name='password' type='password' id="password" className='userProp' />
-        <button>Create <i class="fas fa-angle-right"></i></button>
-        {this.state.status === 200 && <Redirect to='/' />}
+        <button>Create <i className="fas fa-angle-right"></i></button>
+        {this.state.status === 'success' && <Redirect to='/' />}
       </form>
     ) 
   }
@@ -78,7 +80,8 @@ SignUp.propTypes = {
 
 export const mapDispatchToProps = dispatch => {
   return ({
-    logInUser: (user) => dispatch(logInUser(user))
+    logInUser: (user) => dispatch(logInUser(user)),
+    createNewUser: (user) => dispatch(createNewUser(user))
   })
 }
 
