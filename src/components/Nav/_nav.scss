@@ -16,6 +16,8 @@
     grid-template-columns: repeat(3, 33%);
 
     h3 {
+      color: $accent;
+      text-shadow: 1px 1px 1px lighten($accent, 70%);
       margin: 0;
     }
 
