@@ -3,7 +3,7 @@
     display: inline;
     grid-area: title;
     font-family: $fancyfont;
-    font-size: 4rem;
+    font-size: 3rem;
     margin: auto;
   }
 
@@ -12,8 +12,12 @@
     font-family: $fancyfont;
     font-size: 1.5rem;
     display: grid;
-    grid-template-areas: ". title title login";
-    grid-template-columns: 25%;
+    grid-template-areas: ". title login";
+    grid-template-columns: repeat(3, 33%);
+
+    h3 {
+      margin: 0;
+    }
 
     a {
       color: white;
