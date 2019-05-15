@@ -19,9 +19,9 @@ In order to install and run this app, follow these simple directions:
 
 Wireframe:
 
-<iframe style="border: none;" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F4TtRkmd72ll5vJM5S6H3pw%2FMOVIE-MANIA-SIGN-IN%3Fnode-id%3D3%253A0" allowfullscreen></iframe>
+<img src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F4TtRkmd72ll5vJM5S6H3pw%2FMOVIE-MANIA-SIGN-IN%3Fnode-id%3D3%253A0" />
 
-<iframe style="border: none;" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FIhr4iBmcaoJvVpAHvrWSBWP3%2FMovie-Mania%3Fnode-id%3D6%253A68" allowfullscreen></iframe>
+<img style="border: none;" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FIhr4iBmcaoJvVpAHvrWSBWP3%2FMovie-Mania%3Fnode-id%3D6%253A68" / >
 
 
 Outcome:
