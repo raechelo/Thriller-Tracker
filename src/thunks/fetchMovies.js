@@ -4,9 +4,7 @@ import { cleanMovies } from '../utils/api/cleanMovies';
 import { isLoading, hasErrored, setMovies } from '../actions';
 
 export const fetchMovies = (url) => {
-  console.log('a')
   return async (dispatch) => {
-    console.log('b')
     try {
       dispatch(isLoading(true));
       const data = await fetchData(url);
