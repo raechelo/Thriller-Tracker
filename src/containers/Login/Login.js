@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logInUser } from '../../actions';
 import { loginUser } from '../../thunks/loginUser';
+import { fetchFavorites } from '../../thunks/fetchFavorites';
  
 export class Login extends Component {
   constructor() {
@@ -18,7 +19,9 @@ export class Login extends Component {
   handleSubmit = async (e) => {
     e.preventDefault();
     const result = await this.props.loginUser(this.state)
+    await this.props.fetchFavorites(result.data.id);
     result ? this.setState({status: result.status}) : this.showError();
+
   }
 
   showError = () => {
@@ -48,13 +51,16 @@ export class Login extends Component {
 }
 
 Login.propTypes = {
-  logInUser: PropTypes.func
+  logInUser: PropTypes.func,
+  loginUser: PropTypes.func,
+  fetchFavorites: PropTypes.func
 }
 
 
 export const mapDispatchToProps = (dispatch) => ({
   logInUser: (user) => dispatch(logInUser(user)),
-  loginUser: (user) => dispatch(loginUser(user))
+  loginUser: (user) => dispatch(loginUser(user)),
+  fetchFavorites: (user_id) => dispatch(fetchFavorites(user_id))
 })
 
 export default connect(null, mapDispatchToProps)(Login);
