@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logInUser } from '../../actions';
-import { fetchData } from '../../utils/api/fetchData';
+import { loginUser } from '../../thunks/loginUser';
  
 export class Login extends Component {
   constructor() {
@@ -15,30 +15,10 @@ export class Login extends Component {
     }
   }
 
-  handleSubmit = (e) => {
+  handleSubmit = async (e) => {
     e.preventDefault();
-    this.userLogin(this.state);
-  }
-
-  userLogin = (state) => {
-    const {email, password} = state;
-    const url = 'http://localhost:3000/api/users'
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        email,
-        password
-      })
-    }
-    fetchData(url, options)
-    .then(result => {
-      this.setState({status: result.status});
-      this.props.logInUser(result.data);
-    })
-    .catch(error => this.showError());
+    const result = await this.props.loginUser(this.state)
+    result ? this.setState({status: result.status}) : this.showError();
   }
 
   showError = () => {
@@ -73,7 +53,8 @@ Login.propTypes = {
 
 
 export const mapDispatchToProps = (dispatch) => ({
-  logInUser: (user) => dispatch(logInUser(user))
+  logInUser: (user) => dispatch(logInUser(user)),
+  loginUser: (user) => dispatch(loginUser(user))
 })
 
 export default connect(null, mapDispatchToProps)(Login);

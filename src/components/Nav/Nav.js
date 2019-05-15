@@ -11,6 +11,7 @@ export const Nav = (props) => {
         {
           props.user.email && 
           <div>
+            <h3>Welcome, {props.user.name}!</h3>
             <NavLink exact to='/favorites' className='nav fave'>Favorites</NavLink>
             <NavLink exact to='/login' className='nav' onClick={() => props.logOutUser()}>Sign Out</NavLink>
           </div>
@@ -18,6 +19,7 @@ export const Nav = (props) => {
         {
           !props.user.email &&
           <div>
+            <h3>Welcome!</h3>
             <NavLink exact to='/login' className='nav'>Login</NavLink>
             <NavLink exact to='/sign-up' className='nav'>Sign Up</NavLink>
           </div>
