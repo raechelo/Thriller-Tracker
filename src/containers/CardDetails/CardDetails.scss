@@ -8,6 +8,20 @@
   "img btn btn btn";
   padding: .5rem;
   width: 60%;
+  position: relative;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    background-image: url(/static/media/blood.2477dfe0.gif);
+    background-repeat: no-repeat;
+  }
 
   img {
     grid-area: img;
