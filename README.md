@@ -1,4 +1,4 @@
-### Movie Mania
+# Movie Mania
 
 Movie Mania is an app geared towards Horror movie fans who'd like to view movies of that genre and more information about them. Initially, as you can tell by the wireframes, we intended to simply do recently popular movies but after some deliberation, chose to focus on horror because we thought it would be a killer theme.
 
@@ -17,13 +17,13 @@ In order to install and run this app, follow these simple directions:
 
 ## Screenshots
 
-Wireframe:
+### Wireframe:
 
 [![Screen-Shot-2019-05-14-at-11-45-07-PM.png](https://i.postimg.cc/brNdd7N3/Screen-Shot-2019-05-14-at-11-45-07-PM.png)](https://postimg.cc/DJH7MYGX)
 
 [![Screen-Shot-2019-05-14-at-11-44-59-PM.png](https://i.postimg.cc/05cbhyc3/Screen-Shot-2019-05-14-at-11-44-59-PM.png)](https://postimg.cc/PNvXwTGz)
 
-Outcome:
+### Outcome:
 
 ![https://giphy.com/gifs/RMlZkE6AdUnftSvfUZ/html5](https://media.giphy.com/media/RMlZkE6AdUnftSvfUZ/giphy.gif)
 
