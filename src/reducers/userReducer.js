@@ -3,7 +3,7 @@ export const user = (state = {}, action) => {
     case 'USER_LOGIN':
       return action.user;
     case 'USER_LOGOUT':
-      return {}
+      return {};
     default:
      return state;
   }
