@@ -16,7 +16,6 @@ export const ContentContainer = (props) => {
       <Route exact path='/sign-up' component={SignUp} />
 
       <Route path='/movies/:id' render={ ( { match } ) => {
-          console.log(match)
           const { id } = match.params
           const movie = props.movies.find(m => m.id === parseInt(id))
           if (movie) {
