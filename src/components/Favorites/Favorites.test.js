@@ -20,5 +20,8 @@ describe('Favorites', () => {
 
   it('should match the snapshot with all the data passed in', () => {
     expect(wrapper).toMatchSnapshot();
-  })
-})
+
+    mockMovies = [];
+    expect(wrapper).toMatchSnapshot();
+  });
+});
