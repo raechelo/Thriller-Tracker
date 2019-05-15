@@ -1,4 +1,4 @@
-## Movie Mania
+### Movie Mania
 
 Movie Mania is an app geared towards Horror movie fans who'd like to view movies of that genre and more information about them. Initially, as you can tell by the wireframes, we intended to simply do recently popular movies but after some deliberation, chose to focus on horror because we thought it would be a killer theme.
 
