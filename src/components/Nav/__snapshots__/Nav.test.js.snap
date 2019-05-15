@@ -11,10 +11,13 @@ exports[`Nav should match the snapshot with all the data passed in 1`] = `
       to="/"
     >
       <h1>
-        movie mania
+        thriller tracker
       </h1>
     </NavLink>
     <div>
+      <h3>
+        Welcome!
+      </h3>
       <NavLink
         className="nav"
         exact={true}
@@ -45,10 +48,13 @@ exports[`Nav should match the snapshot with all the data passed in 2`] = `
       to="/"
     >
       <h1>
-        movie mania
+        thriller tracker
       </h1>
     </NavLink>
     <div>
+      <h3>
+        Welcome!
+      </h3>
       <NavLink
         className="nav"
         exact={true}

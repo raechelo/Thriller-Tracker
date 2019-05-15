@@ -14,10 +14,11 @@ export const Nav = (props) => {
   return (
     <header className="Header">
       <nav>
-        <NavLink exact to='/' className='nav title'><h1>movie mania</h1></NavLink>
+        <NavLink exact to='/' className='nav title'><h1>thriller tracker</h1></NavLink>
         {
           props.user.email && 
           <div>
+            <h3>Welcome, {props.user.name}!</h3>
             <NavLink exact to='/favorites' className='nav fave'>Favorites</NavLink>
             <NavLink exact to='/login' className='nav' onClick={handleLogOut}>Sign Out</NavLink>
           </div>
@@ -25,6 +26,7 @@ export const Nav = (props) => {
         {
           !props.user.email &&
           <div>
+            <h3>Welcome!</h3>
             <NavLink exact to='/login' className='nav'>Login</NavLink>
             <NavLink exact to='/sign-up' className='nav'>Sign Up</NavLink>
           </div>
