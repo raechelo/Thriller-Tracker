@@ -33,3 +33,37 @@ exports[`Nav should match the snapshot with all the data passed in 1`] = `
   </nav>
 </header>
 `;
+
+exports[`Nav should match the snapshot with all the data passed in 2`] = `
+<header
+  className="Header"
+>
+  <nav>
+    <NavLink
+      className="nav title"
+      exact={true}
+      to="/"
+    >
+      <h1>
+        movie mania
+      </h1>
+    </NavLink>
+    <div>
+      <NavLink
+        className="nav"
+        exact={true}
+        to="/login"
+      >
+        Login
+      </NavLink>
+      <NavLink
+        className="nav"
+        exact={true}
+        to="/sign-up"
+      >
+        Sign Up
+      </NavLink>
+    </div>
+  </nav>
+</header>
+`;

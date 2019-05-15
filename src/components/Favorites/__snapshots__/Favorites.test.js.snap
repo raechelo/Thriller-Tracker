@@ -5,3 +5,9 @@ exports[`Favorites should match the snapshot with all the data passed in 1`] = `
   className="Favorites"
 />
 `;
+
+exports[`Favorites should match the snapshot with all the data passed in 2`] = `
+<section
+  className="Favorites"
+/>
+`;
