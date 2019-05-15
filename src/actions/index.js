@@ -8,6 +8,10 @@ export const toggleFavoriteMovie = (id) => ({
   id
 });
 
+export const clearFavoriteMovies = () => ({
+  type: 'CLEAR_FAVORITE_MOVIES'
+})
+
 export const logInUser = (user) => ({
   type: 'USER_LOGIN',
   user

@@ -1,9 +1,16 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { logOutUser } from '../../actions';
+import { logOutUser, clearFavoriteMovies } from '../../actions';
+
 
 export const Nav = (props) => {
+
+  const handleLogOut = () => {
+    props.logOutUser();
+    props.clearFavoriteMovies();
+  } 
+
   return (
     <header className="Header">
       <nav>
@@ -13,7 +20,7 @@ export const Nav = (props) => {
           <div>
             <h3>Welcome, {props.user.name}!</h3>
             <NavLink exact to='/favorites' className='nav fave'>Favorites</NavLink>
-            <NavLink exact to='/login' className='nav' onClick={() => props.logOutUser()}>Sign Out</NavLink>
+            <NavLink exact to='/login' className='nav' onClick={handleLogOut}>Sign Out</NavLink>
           </div>
         }
         {
@@ -34,7 +41,8 @@ export const mapStateToProps = (state) => ({
 })
 
 export const mapDispatchToProps = (dispatch) => ({
-  logOutUser: () => dispatch(logOutUser())
+  logOutUser: () => dispatch(logOutUser()),
+  clearFavoriteMovies: () => dispatch(clearFavoriteMovies())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Nav);
