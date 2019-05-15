@@ -15,8 +15,7 @@ describe('Login', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  //this test will probably need to be changed once we get the thunk in place for userLogin
-  it.skip('should handle submit', () => {
+  it('should handle submit', () => {
     const e = { target: { className: 'user-form' },preventDefault: () => {} }
     const expected = {email: 'godofolympus@gmail.com', password: 'GoodBoye', status: 200}
 
