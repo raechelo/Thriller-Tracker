@@ -19,10 +19,9 @@ In order to install and run this app, follow these simple directions:
 
 Wireframe:
 
-<img src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F4TtRkmd72ll5vJM5S6H3pw%2FMOVIE-MANIA-SIGN-IN%3Fnode-id%3D3%253A0" />
+[![Screen-Shot-2019-05-14-at-11-45-07-PM.png](https://i.postimg.cc/brNdd7N3/Screen-Shot-2019-05-14-at-11-45-07-PM.png)](https://postimg.cc/DJH7MYGX)
 
-<img style="border: none;" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FIhr4iBmcaoJvVpAHvrWSBWP3%2FMovie-Mania%3Fnode-id%3D6%253A68" / >
-
+[![Screen-Shot-2019-05-14-at-11-44-59-PM.png](https://i.postimg.cc/05cbhyc3/Screen-Shot-2019-05-14-at-11-44-59-PM.png)](https://postimg.cc/PNvXwTGz)
 
 Outcome:
 
