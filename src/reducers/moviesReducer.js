@@ -5,11 +5,21 @@ export const movies = (state = [], action) => {
     case 'TOGGLE_FAVORITE_MOVIE':
       return state.map(movie => {
         return movie.id === action.id ? {...movie, favorited: !movie.favorited} : movie;
-      })
+      });
     case 'CLEAR_FAVORITE_MOVIES':
       return state.map(movie => {
         return {...movie, favorited: false};
-      })
+      });
+    case 'SET_FAVORITES_ON_LOG_IN':
+      const moviesWithUpdatedFavorites = state.map(movie => {
+        action.favorites.forEach(favorite => {
+          if (favorite.movie_id === movie.id) {
+            movie.favorited = true;
+          }
+        });
+        return movie;
+      });
+      return moviesWithUpdatedFavorites; 
     default:
      return state;
   }

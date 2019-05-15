@@ -3,6 +3,11 @@ export const setMovies = (movies) => ({
   movies
 });
 
+export const setFavoritesOnLogIn = (favorites) => ({
+  type: 'SET_FAVORITES_ON_LOG_IN',
+  favorites
+})
+
 export const toggleFavoriteMovie = (id) => ({
   type: 'TOGGLE_FAVORITE_MOVIE',
   id

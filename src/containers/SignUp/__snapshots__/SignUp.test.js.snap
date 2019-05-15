@@ -9,7 +9,7 @@ exports[`SignUp should match the snapshot with all the data passed in 1`] = `
     Create Account
   </h2>
   <p
-    class="error"
+    className="error"
   >
     Email has already been used
   </p>
@@ -52,7 +52,7 @@ exports[`SignUp should match the snapshot with all the data passed in 1`] = `
   <button>
     Create 
     <i
-      class="fas fa-angle-right"
+      className="fas fa-angle-right"
     />
   </button>
 </form>
