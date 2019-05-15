@@ -1,6 +1,5 @@
-import { loginUser } from '../loginUser';
+import { addFavorite } from '../addFavorite';
 import { fetchData } from '../../utils/api/fetchData';
-import { logInUser } from '../../actions';
 
 describe('loginUser', () => {
 
@@ -14,7 +13,7 @@ describe('loginUser', () => {
     thunk = fetchData(mockUrl)
   });
 
-  it.skip('should call dispatch to log in a user', () => {
+  it.skip('should add a movie to a user\'s chosen favorites', () => {
     thunk(mockDispatch);
     expect(mockDispatch).toHaveBeenCalledWith(mockUrl)
   })
