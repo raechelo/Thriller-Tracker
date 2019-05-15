@@ -6,6 +6,10 @@ export const movies = (state = [], action) => {
       return state.map(movie => {
         return movie.id === action.id ? {...movie, favorited: !movie.favorited} : movie;
       })
+    case 'CLEAR_FAVORITE_MOVIES':
+      return state.map(movie => {
+        return {...movie, favorited: false};
+      })
     default:
      return state;
   }
