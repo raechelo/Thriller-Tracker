@@ -1,3 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CardDetails should match the snapshot with all the data passed in 1`] = `undefined`;
+exports[`CardDetails should match the snapshot with all the data passed in 1`] = `
+<section
+  className="Card-Details"
+>
+  <h2>
+    Return of the King
+  </h2>
+  <i
+    className="fas fa-heart fa-2x"
+  />
+  <h5>
+    Released
+    <span>
+      2003
+    </span>
+  </h5>
+  <h6>
+    8.9
+    /10
+    <i
+      className="far fa-star"
+    />
+  </h6>
+  <p>
+    The rightful king retakes the throne of Men and Gondor.
+  </p>
+  <img
+    alt="Return of the King poster"
+  />
+  <Link
+    to="/"
+  >
+    <button
+      className="back-btn"
+    >
+      <i
+        className="fas fa-angle-left"
+      />
+       Back to results
+    </button>
+  </Link>
+</section>
+`;
