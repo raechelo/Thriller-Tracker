@@ -25,6 +25,8 @@ Wireframe:
 
 Outcome:
 
+https://media.giphy.com/media/RMlZkE6AdUnftSvfUZ/giphy.gif
+
 [![screencapture-localhost-3000-2019-05-14-23-28-14.png](https://i.postimg.cc/c15bDQyb/screencapture-localhost-3000-2019-05-14-23-28-14.png)](https://postimg.cc/c6whCtJR)
 
 [![screencapture-localhost-3000-movies-458723-2019-05-14-23-34-44.png](https://i.postimg.cc/zfjdThFp/screencapture-localhost-3000-movies-458723-2019-05-14-23-34-44.png)](https://postimg.cc/mcPNstqF)
