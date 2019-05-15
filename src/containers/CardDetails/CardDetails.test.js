@@ -14,5 +14,8 @@ describe('CardDetails', () => {
 
   it('should match the snapshot with all the data passed in', () => {
     expect(wrapper).toMatchSnapshot();
+
+    movie.favorited = true;
+    expect(wrapper).toMatchSnapshot();
   });
 })

@@ -7,7 +7,7 @@ export const Nav = (props) => {
   return (
     <header className="Header">
       <nav>
-        <NavLink exact to='/' className='nav title'><h1>movie mania</h1></NavLink>
+        <NavLink exact to='/' className='nav title'><h1>thriller tracker</h1></NavLink>
         {
           props.user.email && 
           <div>
