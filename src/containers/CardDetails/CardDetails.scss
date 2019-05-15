@@ -71,6 +71,11 @@
   }
 }
 
+.btn {
+  margin: auto;
+  grid-area: btn;
+}
+
 .back-btn {
   background-color: white;
   color: $accent;

@@ -35,7 +35,7 @@ class CardDetails extends Component {
         <h6>{vote_average}/10<i className="far fa-star"></i></h6>
         <p>{overview}</p>
         <img src={posterImage} alt={title + ' poster'} />
-        <Link to='/'>
+        <Link className="btn" to='/'>
           <button className="back-btn">
             <i className="fas fa-angle-left"></i> Back to results
           </button>
