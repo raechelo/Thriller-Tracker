@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/thriller-tracker/static/css/main.5123f661.chunk.css",
+    "main.js": "/thriller-tracker/static/js/main.6f365df1.chunk.js",
+    "main.js.map": "/thriller-tracker/static/js/main.6f365df1.chunk.js.map",
+    "runtime~main.js": "/thriller-tracker/static/js/runtime~main.42f24c5b.js",
+    "runtime~main.js.map": "/thriller-tracker/static/js/runtime~main.42f24c5b.js.map",
+    "static/js/2.615bc975.chunk.js": "/thriller-tracker/static/js/2.615bc975.chunk.js",
+    "static/js/2.615bc975.chunk.js.map": "/thriller-tracker/static/js/2.615bc975.chunk.js.map",
+    "index.html": "/thriller-tracker/index.html",
+    "precache-manifest.2a72f730a227ad3e10b16f3a1f2ba143.js": "/thriller-tracker/precache-manifest.2a72f730a227ad3e10b16f3a1f2ba143.js",
+    "service-worker.js": "/thriller-tracker/service-worker.js",
+    "static/css/main.5123f661.chunk.css.map": "/thriller-tracker/static/css/main.5123f661.chunk.css.map"
+  }
+}
