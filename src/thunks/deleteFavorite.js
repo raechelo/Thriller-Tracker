@@ -15,4 +15,4 @@ export const deleteFavorite = (movie_id, user_id) => {
     }
     await fetchData(url, options);
   }
-}
+} 
