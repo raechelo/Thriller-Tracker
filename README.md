@@ -1,6 +1,6 @@
-# Thriller Tracker
+# Thriller Tracker 🔪
 
-Thriller Tracker is an app geared towards Horror movie fans who'd like to view movies of that genre and more information about them. Initially, as you can tell by the wireframes, we intended to simply do recently popular movies but after some deliberation, chose to focus on horror because we thought it would be a killer theme.
+Thriller Tracker is an app geared towards Horror movie fans who'd like to view movies of that genre and more information about them. Initially, as you can tell by the wireframes, we intended to simply do recently popular movies but after some deliberation, chose to focus on horror because we thought it would be a *killer* theme.
 
 ## Install/Setup
 In order to install and run this app, follow these simple directions:
