@@ -2,7 +2,6 @@ import { fetchMovies } from '../fetchMovies';
 import { fetchData } from '../../utils/api/fetchData';
 import { cleanMovies } from '../../utils/api/cleanMovies';
 import { isLoading, hasErrored, setMovies } from '../../actions';
-import { exportAllDeclaration } from '@babel/types';
 
 jest.mock('../../utils/api/cleanMovies')
 
@@ -40,7 +39,7 @@ describe('fetchMovies', () => {
     expect(window.fetch).toHaveBeenCalledWith(mockUrl, undefined);
   });
 
-  it.skip('should clean movies with correct params if the response is okay', async () => {
+  it('should clean movies with correct params if the response is okay', async () => {
     await thunk(mockDispatch)
     expect(mockCleanMovies).toHaveBeenCalledWith(...mockMovies)
   });
